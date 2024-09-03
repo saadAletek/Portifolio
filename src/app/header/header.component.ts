@@ -8,9 +8,4 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  @ViewChild('toggle')toggle!:ElementRef;
-
-  toggleToggle(){
-    // this.toggle.nativeElement.classList.toggle("animation");
-  }
 }
