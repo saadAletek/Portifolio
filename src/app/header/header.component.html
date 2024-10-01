@@ -3,7 +3,7 @@
         <div>
             <img class=" cursor-pointer w-40" src="images/Logo.svg">
         </div>
-        <div class="flex gap-9">
+        <div class="flex gap-9 text-xl">
             <div class="duration-300 hover:text-primary cursor-pointer">
                 About me
             </div>
@@ -19,7 +19,7 @@
         </div>
         <div>
             <div>
-                <img class="w-7 cursor-pointer duration-300 hover:brightness-125 hover:scale-105" src="images/lang.svg">
+                <img (click)="toggleTheme()" class="w-9 cursor-pointer duration-200 hover:brightness-150" #themeSwitcher src="images/light.svg">
             </div>
         </div>
     </div>
