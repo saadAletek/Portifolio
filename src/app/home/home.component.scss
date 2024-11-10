@@ -68,15 +68,38 @@ svg #wheel {
 }
 
 .common-headers{
-    padding: 0 15px;
+    padding: 10px 20px;
     border-bottom: 1px solid #D46868;
-}
-.common-headers:after{
-    content: '';
-    display: block;
     position: relative;
-    width: 100%;
-    height: 1px;
-    bottom: -10px;
+}
+.common-headers div{
     background: #D46868;
+    height: 1px;
+    width: 60%;
+    position: absolute;
+    bottom: -15px;
+    right: 50%;
+    transform: translateX(50%);
+}
+.common-headers div::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -15px;
+    border-radius: 50%;
+    border: 1px solid #d46868;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.common-headers div::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -15px;
+    border-radius: 50%;
+    border: 1px solid #d46868;
+    top: 50%;
+    transform: translateY(-50%);
 }
