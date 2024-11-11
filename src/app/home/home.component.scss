@@ -44,8 +44,12 @@ svg #wheel {
         text-shadow: 0 0 20px #d4686886;
 }
 
-.radial-gradient {
-    background: radial-gradient(circle, #D46868, transparent);
+.glowing-effect {
+        box-shadow: 0 0 20px #622e2ed3;
+}
+.glowing-effect:hover {
+    box-shadow: 0 0 30px #813939 !important;
+
 }
 
 .blob {
@@ -102,4 +106,19 @@ svg #wheel {
     border: 1px solid #d46868;
     top: 50%;
     transform: translateY(-50%);
+}
+.incGapAnimation{
+    animation: incGap 1.5s ease-in-out infinite;
+}
+@keyframes incGap {
+    0% , 100%{
+        gap: 10px;
+    }
+    50%{
+        gap: 16px;
+    }
+}
+
+.transparent-gradient {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(0, 0, 0, 0.836) 100%);
 }
