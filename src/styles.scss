@@ -5,8 +5,12 @@
 
 
 :root {
-  --scroll-bar-thumb : #1a1a1a
-  --scroll-bar-track : #232323
+  --primary : #D46868;
+  --main-bg : #232323;
+  --lighter-bg : #404040;
+  --font-color : #000000
+  //DADADA
+  //FFFFFF
 }
 
 body{
@@ -24,12 +28,12 @@ body{
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background:  var(--scroll-bar-track);
+    background:  var(--main-bg);
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-bar-thumb); 
+    background-color: var(--lighter-bg); 
     border-radius: 10px;
     transition: background-color .3s ease-in-out;
   }
@@ -223,6 +227,25 @@ animation: scroll ease 1.5s infinite;
 }
 
 
-.light .onlightBrightness {
+.body-light .onlightBrightness {
   filter: brightness(0);
+}
+
+.bg-main-bg{
+  background-color: var(--main-bg);
+}
+.bg-lighter-main-bg{
+  background-color: var(--lighter-bg);
+}
+.bg-primary-bg{
+  background-color: var(--primary);
+}
+.border-lighter-main {
+  border-color: var(--lighter-bg);
+}
+.text-cont {
+  color: var(--font-color);
+}
+.min-h-custom{
+  min-height: calc(100vh - 117px);
 }

@@ -1,7 +1,7 @@
 <div class="h-screen w-full relative pt-36">
     <div
-        class="container mx-auto px-2 h-full flex xl:flex-row flex-col-reverse xl:items-center xl:justify-between relative">
-        <div>
+        class="container mx-auto px-3 h-full flex items-center justify-between relative">
+        <div class="relative z-10">
             <div class="2xl:text-7xl xl:text-6xl lg:text-4xl text-3xl leading-snug lg:mb-20 mb-10">
                 <p>Hi I'm a</p>
                 <p class="text-primary duration-300 hover:brightness-125 cursor-pointer font-bold glowing-text">Frontend
@@ -20,8 +20,8 @@
         </div>
 
 
-        <div class="relative">
-            <img class=" w-full relative z-20 rounded-full duration-200 hover:scale-105 glowing-effect"
+        <div class="md:relative md:right-auto right-0 md:filter-none grayscale absolute z-0 xl:p-0 p-3">
+            <img class="xl:w-[500px] lg:w-[300px] w-[250px] z-20 rounded-full duration-200 hover:scale-105 "
                 src="images/selfie.png">
         </div>
 
@@ -41,55 +41,55 @@
 
 <!-- My Skills -->
 <div class="py-28 border-t border-primary/25">
-    <div class="container mx-auto flex flex-col items-center">
+    <div class="container mx-auto px-3 flex flex-col items-center">
         <div class="common-headers text-primary text-4xl font-semibold">
-            <p>Some of my work</p>
+            <p>My Main Skills</p>
             <div></div>
         </div>
-        <div class="grid grid-cols-3 gap-10 pt-16 w-full">
-            <div class="bg-lighterDark p-4 rounded-[4px]">
+        <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-10 pt-16 w-full">
+            <div class="bg-lighter-main-bg p-4 rounded-[4px]">
                 <div class="flex w-full items-center justify-between">
                     <div class="text-xl">Angular</div>
                     <div>80%</div>
                 </div>
-                <div class="w-full bg-dark h-4 mt-3 rounded-[4px] overflow-hidden">
-                    <div class="w-[80%] bg-primary h-full"></div>
+                <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
+                    <div class="w-[80%] bg-primary-bg h-full"></div>
                 </div>
             </div>
-            <div class="bg-lighterDark p-4 rounded-[4px]">
+            <div class="bg-lighter-main-bg p-4 rounded-[4px]">
                 <div class="flex w-full items-center justify-between">
                     <div class="text-xl">TypeScript</div>
                     <div>80%</div>
                 </div>
-                <div class="w-full bg-dark h-4 mt-3 rounded-[4px] overflow-hidden">
-                    <div class="w-[80%] bg-primary h-full"></div>
+                <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
+                    <div class="w-[80%] bg-primary-bg h-full"></div>
                 </div>
             </div>
-            <div class="bg-lighterDark p-4 rounded-[4px]">
+            <div class="bg-lighter-main-bg p-4 rounded-[4px]">
                 <div class="flex w-full items-center justify-between">
                     <div class="text-xl">JavaScript</div>
                     <div>80%</div>
                 </div>
-                <div class="w-full bg-dark h-4 mt-3 rounded-[4px] overflow-hidden">
-                    <div class="w-[80%] bg-primary h-full"></div>
+                <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
+                    <div class="w-[80%] bg-primary-bg h-full"></div>
                 </div>
             </div>
-            <div class="bg-lighterDark p-4 rounded-[4px]">
+            <div class="bg-lighter-main-bg p-4 rounded-[4px]">
                 <div class="flex w-full items-center justify-between">
                     <div class="text-xl">HTML</div>
                     <div>80%</div>
                 </div>
-                <div class="w-full bg-dark h-4 mt-3 rounded-[4px] overflow-hidden">
-                    <div class="w-[80%] bg-primary h-full"></div>
+                <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
+                    <div class="w-[80%] bg-primary-bg h-full"></div>
                 </div>
             </div>
-            <div class="bg-lighterDark p-4 rounded-[4px]">
+            <div class="bg-lighter-main-bg p-4 rounded-[4px]">
                 <div class="flex w-full items-center justify-between">
                     <div class="text-xl">CSS</div>
                     <div>80%</div>
                 </div>
-                <div class="w-full bg-dark h-4 mt-3 rounded-[4px] overflow-hidden">
-                    <div class="w-[80%] bg-primary h-full"></div>
+                <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
+                    <div class="w-[80%] bg-primary-bg h-full"></div>
                 </div>
             </div>
         </div>
@@ -114,17 +114,17 @@
             <div class="overflow-hidden relative group rounded-md">
                 <img class="w-full" src="images/themar.png">
                 <div
-                    class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-32 flex flex-col justify-end">
+                    class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex flex-col justify-end">
                     <div class="w-full text-center mb-4 text-2xl">
                         Themar
                     </div>
-                    <div class="flex lg:flex-row flex-col justify-center items-center lg:gap-16 gap-5">
+                    <div class="flex justify-center items-center lg:gap-16 gap-5">
                         <a href="https://themar.sa/landing" target="_blank"
-                            class="text-xl border border-white w-full text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                            class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                             Visit
                         </a>
                         <div
-                            class="text-xl border border-white w-full text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                            class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                             Details
                         </div>
                     </div>
@@ -133,17 +133,17 @@
             <div class="overflow-hidden relative group rounded-md">
                 <img class="w-full" src="images/jhd.png">
                 <div
-                    class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-32 flex flex-col justify-end">
+                    class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex flex-col justify-end">
                     <div class="w-full text-center mb-4 text-2xl">
                         JHD
                     </div>
-                    <div class="flex lg:flex-row flex-col justify-center lg:gap-16 gap-5">
+                    <div class="flex justify-center lg:gap-16 gap-5">
                         <a href="https://visitalbalad.com/en" target="_blank"
-                            class="text-xl border border-white w-full text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                            class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                             Visit
                         </a>
                         <div
-                            class="text-xl border border-white w-full text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                            class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                             Details
                         </div>
                     </div>
@@ -152,17 +152,17 @@
             <div class="overflow-hidden relative group rounded-md">
                 <img class="w-full" src="images/4city.png">
                 <div
-                    class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-32 flex flex-col justify-end">
+                    class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex flex-col justify-end">
                     <div class="w-full text-center mb-4 text-2xl">
                         4city
                     </div>
-                    <div class="flex lg:flex-row flex-col justify-center lg:gap-16 gap-5">
+                    <div class="flex justify-center lg:gap-16 gap-5">
                         <a href="https://4city.org/en" target="_blank"
-                            class="text-xl border border-white w-full text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                            class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                             Visit
                         </a>
                         <div
-                            class="text-xl border border-white w-full text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                            class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                             Details
                         </div>
                     </div>
@@ -171,17 +171,17 @@
             <div class="overflow-hidden relative group rounded-md">
                 <img class="w-full" src="images/syrian.png">
                 <div
-                    class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-32 flex flex-col justify-end">
+                    class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex flex-col justify-end">
                     <div class="w-full text-center mb-4 text-2xl">
                         Syrian Alumni
                     </div>
-                    <div class="flex lg:flex-row flex-col justify-center lg:gap-16 gap-5">
+                    <div class="flex justify-center lg:gap-16 gap-5">
                         <a href="https://www.syrianalumni.club/" target="_blank"
-                            class="text-xl border border-white w-full text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                            class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                             Visit
                         </a>
                         <div
-                            class="text-xl border border-white w-full text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                            class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                             Details
                         </div>
                     </div>

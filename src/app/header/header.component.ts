@@ -21,15 +21,23 @@ export class HeaderComponent {
   }
   
   ngOnInit(){
-    console.log('asd')
     let theme = localStorage.getItem('theme');
 
     this.isLight = theme === 'true'
     this.changeTheme()
   
     if (!theme) {
-      localStorage.setItem('theme', 'false');
-    }
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      this.isLight = !prefersDark;
+      
+      localStorage.setItem('theme', this.isLight ? 'true' : 'false');
+      
+    this.changeTheme()
+    } else {
+
+      this.isLight = theme === 'true';
+    }  
     
     console.log('Theme:', theme);
   
@@ -62,12 +70,14 @@ export class HeaderComponent {
 
     localStorage.setItem('theme', `${this.isLight}`);
 
-    this.document.querySelector('body')?.classList.add(this.isLight ? 'light' : 'dark')
-    this.document.querySelector('body')?.classList.add(this.isLight ? 'bg-light' : 'bg-dark')
-    this.document.querySelector('body')?.classList.add(this.isLight ? 'text-black' : 'text-white')
-    this.document.querySelector('body')?.classList.remove(this.isLight ? 'dark' : 'light')
-    this.document.querySelector('body')?.classList.remove(this.isLight ? 'bg-dark' : 'bg-light')
-    this.document.querySelector('body')?.classList.remove(this.isLight ? 'text-white' : 'text-black')
+
+    this.document.querySelector('body')?.classList.add(this.isLight ? 'body-light' : 'body-dark')
+    this.document.querySelector('body')?.classList.remove(this.isLight ? 'body-dark' : 'body-light')
+
+    
+    document.documentElement.style.setProperty('--main-bg', this.isLight ? '#DADADA' : '#232323');
+    document.documentElement.style.setProperty('--lighter-bg', this.isLight ? '#EBEBEB' : '#404040');
+    document.documentElement.style.setProperty('--font-color', this.isLight ? '#000000' : '#ffffff');
   }
 
 

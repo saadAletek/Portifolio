@@ -1,9 +1,9 @@
 <div class="absolute top-0 w-full z-10 py-5">
-    <div class="container mx-auto px-2 flex items-center justify-between">
+    <div class="container mx-auto px-4 flex items-center justify-between">
         <div [routerLink]="''">
             <img class=" cursor-pointer w-40" [src]="isLight ? 'images/Logo_dark.svg' : 'images/Logo.svg'">
         </div>
-        <div class="flex gap-9 text-xl font-bold">
+        <div class="lg:flex hidden gap-9 text-xl font-bold">
             <div [routerLink]="'about-me'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
                 About me
             </div>
@@ -18,9 +18,8 @@
             </div>
         </div>
         <div>
-            <div>
-                <img (click)="toggleTheme()" class="w-9 cursor-pointer duration-200 hover:brightness-150" #themeSwitcher [src]="isLight ? 'images/dark.svg' : 'images/light.svg'">
-            </div>
+                <img (click)="toggleTheme()" class="lg:block hidden w-9 cursor-pointer duration-200 hover:brightness-150" #themeSwitcher [src]="isLight ? 'images/dark.svg' : 'images/light.svg'">
+                <img class="lg:hidden block w-9 cursor-pointer duration-200 hover:scale-110"  [src]="isLight ? 'images/hamb_b.svg' : 'images/hamb_w.svg'">
         </div>
     </div>
 </div>

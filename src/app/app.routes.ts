@@ -21,6 +21,12 @@ export const routes: Routes = [
     {
         path : 'my-works',
         component : MyworksComponent,
+        children : [
+            {
+                path : ':id',
+                component : MyworksComponent
+            }
+        ]
     },
     {
         path : 'blogs',
