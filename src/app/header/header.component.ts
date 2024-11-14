@@ -12,6 +12,9 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   @ViewChild('themeSwitcher') themeSwitcher!: ElementRef;
+  @ViewChild('menuHamb') menuHamb!: ElementRef;
+
+  isMenuOpen = false
 
   constructor(
     
@@ -20,27 +23,24 @@ export class HeaderComponent {
     
   }
   
-  ngOnInit(){
-    let theme = localStorage.getItem('theme');
-
-    this.isLight = theme === 'true'
-    this.changeTheme()
+  ngOnInit() {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      let theme = localStorage.getItem('theme');
   
-    if (!theme) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      this.isLight = !prefersDark;
-      
-      localStorage.setItem('theme', this.isLight ? 'true' : 'false');
-      
-    this.changeTheme()
-    } else {
-
       this.isLight = theme === 'true';
-    }  
-    
-    console.log('Theme:', theme);
+      this.changeTheme();
   
+      if (!theme) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        this.isLight = !prefersDark;
+        localStorage.setItem('theme', this.isLight ? 'true' : 'false');
+        this.changeTheme();
+      } else {
+        this.isLight = theme === 'true';
+      }
+  
+      console.log('Theme:', theme);
+    }
   }
 
   isLight = false;
@@ -60,8 +60,45 @@ export class HeaderComponent {
         
     this.isLight = !this.isLight;
         this.changeTheme()
-      }, 400);
+      }, 300);
     }, 100);
+  }
+
+  isMenuSwitching = false;
+
+
+  toggleMen() {
+    if (this.isMenuSwitching) return;
+    this.isMenuSwitching = true;
+    this.menuHamb.nativeElement.classList.add('scale-125');
+    setTimeout(() => {
+      this.menuHamb.nativeElement.classList.add('rotated');
+      setTimeout(() => {
+        this.menuHamb.nativeElement.classList.remove('rotated');
+        this.menuHamb.nativeElement.classList.remove('scale-125');
+        this.isMenuSwitching = false;
+        //switch here
+
+        this.toggleMenu()
+      }, 300);
+    }, 100);
+  }
+
+
+  returnHambStatus():string {
+    const prefix = this.isMenuOpen ? 'close' : 'hamb';
+    const suffix = this.isLight ? 'b' : 'w';
+    return `images/${prefix}_${suffix}.svg`;
+  }
+
+  toggleMenu(){
+    this.isMenuOpen = !this.isMenuOpen
+    this.document.querySelector('.menuToOpen')?.classList.toggle('hidden')
+  }
+
+  closeMenu(){
+    this.isMenuOpen = false
+    this.document.querySelector('.menuToOpen')?.classList.add('hidden')
   }
 
 

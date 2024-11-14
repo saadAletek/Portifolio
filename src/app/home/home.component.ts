@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { myWork , skills } from '../../app/pageData'
 
 @Component({
   selector: 'app-home',
@@ -9,5 +10,6 @@ import { RouterModule } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  works = myWork.slice(0, 4)
+  skills = skills
 }

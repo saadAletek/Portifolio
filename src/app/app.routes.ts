@@ -4,6 +4,7 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
 import { ContactmeComponent } from './contactme/contactme.component';
 import { MyworksComponent } from './myworks/myworks.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { WorkDetailsComponent } from './work-details/work-details.component';
 
 export const routes: Routes = [
     {
@@ -21,12 +22,10 @@ export const routes: Routes = [
     {
         path : 'my-works',
         component : MyworksComponent,
-        children : [
-            {
-                path : ':id',
-                component : MyworksComponent
-            }
-        ]
+    },
+    {
+        path : 'my-works/:id',
+        component : WorkDetailsComponent
     },
     {
         path : 'blogs',
