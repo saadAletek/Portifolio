@@ -64,3 +64,21 @@ export const skills = [
         percentage : 95
     }
 ]
+
+export const languages = [
+    {
+        id : 1,
+        name : 'Arabic',
+        percentage : 100
+    },
+    {
+        id : 2,
+        name : 'Turkish',
+        percentage : 90
+    },
+    {
+        id : 3,
+        name : 'English',
+        percentage : 70
+    }
+]

@@ -40,12 +40,12 @@
   
 
   ::-moz-selection {
-    color: white;
+    color: var(--font-color);
     background: #d4686857
   }
   
   ::selection {
-    color: white;
+    color: var(--font-color);
     background: #d4686857
   }
   

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { skills , languages } from '../../app/pageData'
 
 @Component({
   selector: 'app-aboutme',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './aboutme.component.scss'
 })
 export class AboutmeComponent {
+  skills = skills
+  languages = languages
 
 }
