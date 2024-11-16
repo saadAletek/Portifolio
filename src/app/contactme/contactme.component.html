@@ -1,3 +1,32 @@
 <div class="py-28 min-h-custom">
-
+    <div class="container mx-auto px-3 flex flex-col items-center">
+        <div class="common-headers text-primary text-4xl font-semibold">
+            <p>Contact me</p>
+            <div></div>
+        </div>
+        <div class="mt-16 text-3xl">
+            <a [href]="'mailto:' + mail" class="flex gap-5 bg-lighter-main-bg p-5 rounded-md cursor-pointer duration-200 hover:scale-105 hover:brightness-90">
+                <img class="onlightBrightness" src="images/mail.svg">
+                <p>Send me an Email.</p>
+            </a>
+            <a [href]="'tel:' + phone" class="flex gap-5 bg-lighter-main-bg p-5 rounded-md cursor-pointer duration-200 hover:scale-105 hover:brightness-90 mt-10">
+                <img class="onlightBrightness" src="images/phone.svg">
+                <p>Send me an Email.</p>
+            </a>
+            <div class=" mt-10">
+                Contact me on:
+            </div>
+            <div class="flex justify-between mt-5">
+                <a [href]="Twitter" target="_blank" class="p-4 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
+                    <img class="relative z-10 duration-200 w-10" src="images/x_c.svg">
+                </a>
+                <a [href]="insta" target="_blank" class="p-4 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
+                    <img class="relative z-10 duration-200 w-10" src="images/insta_c.svg">
+                </a>
+                <a [href]="github" target="_blank" class="p-4 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
+                    <img class="relative z-10 duration-200 w-10" src="images/github_c.svg">
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,3 +1,10 @@
+
+export const mail = 'said.elatik.603@gmail.com'
+export const phone = '+905362961334'
+export const Twitter = 'https://x.com/Mr_Hamun'
+export const github = 'https://github.com/saadAletek'
+export const insta = 'https://www.instagram.com/said.elatik/'
+
 export const myWork = [
     {
         id : 1,
