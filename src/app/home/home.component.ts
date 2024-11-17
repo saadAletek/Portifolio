@@ -11,5 +11,5 @@ import { myWork , skills } from '../../app/pageData'
 })
 export class HomeComponent {
   works = myWork.slice(0, 4)
-  skills = skills
+  skills = skills.slice(0, 5)
 }

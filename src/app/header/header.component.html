@@ -1,9 +1,12 @@
-<div class="absolute top-0 w-full z-10 py-5 border-b border-primary/25 transBg">
+<div class="absolute top-0 w-full py-5 border-b border-primary/25 transBg z-30 shadow-md" [class.bg-lighter-main-bg]="isMenuOpen">
     <div class="container mx-auto px-4 flex items-center justify-between">
         <div [routerLink]="''">
             <img (click)="closeMenu()" class=" cursor-pointer w-40" [src]="isLight ? 'images/Logo_dark.svg' : 'images/Logo.svg'">
         </div>
         <div class="lg:flex hidden gap-9 text-xl font-bold">
+            <div [routerLink]="''" class="duration-300 hover:text-primary cursor-pointer">
+                Home
+            </div>
             <div [routerLink]="'about-me'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
                 About me
             </div>
@@ -19,10 +22,11 @@
         </div>
         <div>
                 <img (click)="toggleTheme()" class="lg:block hidden w-9 cursor-pointer duration-200 hover:brightness-150" #themeSwitcher [src]="isLight ? 'images/dark.svg' : 'images/light.svg'">
-                <img (click)="toggleMen()" class="lg:hidden block w-9 cursor-pointer duration-200 hover:scale-110" #menuHamb [src]="returnHambStatus()">
+                <img (click)="toggleMen()" class="lg:hidden block cursor-pointer duration-200 hover:scale-110 w-6" #menuHamb [src]="returnHambStatus()">
         </div>
     </div>
-    <div class="mt-10 text-center grid gap-6 duration-200 hidden   menuToOpen">
+    <div class="mt-10 text-center grid gap-6 duration-200 hidden menuToOpen">
+        <div (click)="closeMenu()" [routerLink]="''" class="duration-300 hover:text-primary cursor-pointer">Home</div>
         <div (click)="closeMenu()" [routerLink]="'about-me'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">About me</div>
         <div (click)="closeMenu()" [routerLink]="'contact-me'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">Contact me</div>
         <div (click)="closeMenu()" [routerLink]="'my-works'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">My Works</div>

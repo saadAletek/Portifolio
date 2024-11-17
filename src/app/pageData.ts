@@ -10,37 +10,64 @@ export const myWork = [
         id : 1,
         name : 'Themar',
         url : 'https://themar.sa/landing',
-        image : 'images/themar.png'
+        image : 'images/themar.png',
+        details : `
+                <div class=" text-2xl">
+            <img class="w-full rounded-md" src="https://i.imgur.com/XPo9FKT.png">
+            <div class=" mt-16">
+                <a href="https://themar.sa/" target="_blank" class="text-primary">Themar </a> is a Saudi platform for investment and financing purchases for small and micro-enterprises, compliant with Islamic Sharia and licensed by the Central Bank.
+            </div>
+            <div class="mt-10">
+                My main part was making the landing page
+            </div>
+        </div>
+
+        `
     },
     {
         id : 2,
         name : 'JHD',
         url : 'https://visitalbalad.com/en',
-        image : 'images/jhd.png'
+        image : 'images/jhd.png',
+        details : `
+                            <div class=" text-2xl">
+            <img class="w-full rounded-md" src="https://i.imgur.com/z489EpQ.png">
+            <div class=" mt-16">
+                <a href="https://themar.sa/" target="_blank" class="text-primary">Themar </a> is a Saudi platform for investment and financing purchases for small and micro-enterprises, compliant with Islamic Sharia and licensed by the Central Bank.
+            </div>
+            <div class="mt-10">
+                My main part was making the landing page
+            </div>
+        </div>
+        `
     },
     {
         id : 3,
         name : '4city',
         url : 'https://4city.org/en',
-        image : 'images/4city.png'
+        image : 'images/4city.png',
+        details : ''
     },
     {
         id : 4,
         name : 'Syrian Alumni',
         url : 'https://www.syrianalumni.club/',
-        image : 'images/syrian.png'
+        image : 'images/syrian.png',
+        details : ''
     },
     {
         id : 5,
         name : 'Nutera',
         url : 'https://www.nutera.app/',
-        image : 'images/nutera.png'
+        image : 'images/nutera.png',
+        details : ''
     },
     {
         id : 6,
         name : 'Password manager',
         url : '',
-        image : 'images/passMan.png'
+        image : 'images/passMan.png',
+        details : ''
     }
 ]
 
@@ -48,27 +75,42 @@ export const skills = [
     {
         id : 1,
         name : 'Angular',
-        percentage : 60
+        percentage : 70
     },
     {
         id : 2,
         name : 'JavaScript',
-        percentage : 70
+        percentage : 80
     },
     {
         id : 3,
         name : 'TypeScript',
-        percentage : 40
+        percentage : 70
     },
     {
         id : 4,
-        name : 'CSS',
-        percentage : 80
+        name : 'CSS 3',
+        percentage : 85
     },
     {
         id : 5,
-        name : 'HTML',
+        name : 'HTML 5',
         percentage : 95
+    },
+    {
+        id : 6,
+        name : 'Tailwind',
+        percentage : 80
+    },
+    {
+        id : 7,
+        name : 'Figma',
+        percentage : 50
+    },
+    {
+        id : 8,
+        name : 'Github / GIT',
+        percentage : 70
     }
 ]
 
