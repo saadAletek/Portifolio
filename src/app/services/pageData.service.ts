@@ -9,9 +9,9 @@ export class ToursService {
   constructor(private httpClient: HttpClient) {}
   
   getWorks(): Observable<WorksDto[]> {
-    return this.httpClient.get<WorksDto[]>(`TourGuides`);
+    return this.httpClient.get<WorksDto[]>(`https://ecommerceapi20241122000759.azurewebsites.net/WeatherForecast`);
   }  
-  
+
   getWorksById(id : number): Observable<WorksDto> {
     return this.httpClient.get<WorksDto>(`TourGuides`);
   } 

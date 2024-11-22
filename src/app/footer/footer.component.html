@@ -6,7 +6,7 @@
         <div class="flex gap-5">
             @for(social of socialMedia ; track social){
                 <a [href]="social.name" target="_blank" class="p-2 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
-                    <img class="relative z-10 duration-200" [src]="social.image">
+                    <img loading="lazy" class="relative z-10 duration-200" [src]="social.image">
                 </a>
             }
         </div>
