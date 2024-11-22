@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { phone , mail , Twitter , github , insta } from '../../app/pageData'
+import { personalDetails , socialMedia } from '../../app/pageData'
 
 @Component({
   selector: 'app-contactme',
@@ -9,9 +9,6 @@ import { phone , mail , Twitter , github , insta } from '../../app/pageData'
   styleUrl: './contactme.component.scss'
 })
 export class ContactmeComponent {
-  mail = mail
-  phone = phone
-  Twitter = Twitter
-  github = github
-  insta = insta
+  personalDetails = personalDetails
+  socialMedia = socialMedia
 }

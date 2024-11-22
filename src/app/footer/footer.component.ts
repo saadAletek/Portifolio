@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Twitter , github , insta } from '../../app/pageData'
+import { socialMedia } from '../../app/pageData'
 
 @Component({
   selector: 'app-footer',
@@ -9,8 +9,5 @@ import { Twitter , github , insta } from '../../app/pageData'
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  Twitter = Twitter
-  github = github
-  insta = insta
-
+  socialMedia = socialMedia;
 }

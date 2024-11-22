@@ -4,28 +4,24 @@
             <p>Contact me</p>
             <div></div>
         </div>
-        <div class="mt-16 lg:text-3xl text-2xl">
-            <a [href]="'mailto:' + mail" class="flex gap-5 bg-lighter-main-bg p-5 rounded-md cursor-pointer duration-200 hover:scale-105 hover:brightness-90">
-                <img class="onlightBrightness" src="images/mail.svg">
-                <p>Send me an Email.</p>
+        <div class="mt-16 lg:text-3xl text-xl">
+            <a [href]="'mailto:' + personalDetails.mail" class="flex justify-center gap-3 bg-lighter-main-bg p-5 rounded-md cursor-pointer duration-200 hover:scale-105 hover:brightness-90">
+                <img class="onlightBrightness w-7" src="images/mail.svg">
+                <p>{{personalDetails.mail}}</p>
             </a>
-            <a [href]="'tel:' + phone" class="flex gap-5 bg-lighter-main-bg p-5 rounded-md cursor-pointer duration-200 hover:scale-105 hover:brightness-90 mt-10">
-                <img class="onlightBrightness" src="images/phone.svg">
-                <p>My phone number</p>
+            <a [href]="'tel:' + personalDetails.phone" class="flex justify-center gap-3 bg-lighter-main-bg p-5 rounded-md cursor-pointer duration-200 hover:scale-105 hover:brightness-90 mt-10">
+                <img class="onlightBrightness w-7" src="images/phone.svg">
+                <p>{{personalDetails.phone}}</p>
             </a>
-            <div class=" mt-10">
+            <div class="mt-10">
                 Contact me on:
             </div>
-            <div class="flex justify-between mt-5">
-                <a [href]="Twitter" target="_blank" class="p-4 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
-                    <img class="relative z-10 duration-200 w-10" src="images/x_c.svg">
-                </a>
-                <a [href]="insta" target="_blank" class="p-4 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
-                    <img class="relative z-10 duration-200 w-10" src="images/insta_c.svg">
-                </a>
-                <a [href]="github" target="_blank" class="p-4 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
-                    <img class="relative z-10 duration-200 w-10" src="images/github_c.svg">
-                </a>
+            <div class="grid grid-cols-3 place-items-center gap-5 mt-5">
+                @for(social of socialMedia ; track social){
+                    <a [href]="social.name" target="_blank" class="p-4 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
+                        <img class="relative z-10 duration-200 w-10" [src]="social.image">
+                    </a>
+                }
             </div>
         </div>
     </div>

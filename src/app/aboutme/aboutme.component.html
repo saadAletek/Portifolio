@@ -4,10 +4,11 @@
             <img class="w-[300px] z-20 rounded-full duration-200 hover:scale-105 glowing-effect"
             src="images/selfie.png">
         </div>
-        <div class="mt-10 text-center xl:text-3xl lg:text-2xl text-xl">
-            My name is <span class="text-primary">Saad Aletek</span> and I'am a <span class="text-primary">Frontend</span> developer based in <span class="text-primary">Turkey</span>.
+        <div class="mt-10 text-center xl:text-3xl lg:text-2xl text-xl grid gap-20">
+            <p>My name is <span class="text-primary">Saad Aletek</span>. I am <span class="text-primary">{{currentAge}}</span> years old and from <span class="text-primary">Syria</span>.</p>
+            <p>I'am a <span class="text-primary">Frontend</span> developer based in <span class="text-primary">Turkey</span></p>
         </div>
-        <div class="text-xl py-16 mt-16 border-b border-primary/25">
+        <div class="text-xl py-16 mt-9 border-b border-primary/25">
             <div class="text-center mb-10 lg:text-3xl text-2xl">Companies I worked with :</div>
             <div class="w-full flex items-center justify-center gap-10">
                 <a href="https://sol-gr.com/" target="_blank" class="bg-lighter-main-bg p-5 rounded-[4px]">
@@ -18,16 +19,18 @@
         <div class="text-xl py-16 border-b border-primary/25">
             <div class="text-center mb-10 lg:text-3xl text-2xl">Languages I speak :</div>
             <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-10 w-full">
-                @for(langu of languages ; track langu){
-                    <div class="bg-lighter-main-bg p-4 rounded-[4px]">
-                        <div class="flex w-full items-center justify-between">
-                            <a target="_blank" [href]="'https://www.google.com/search?q=' + langu.name + '&oq= ' + langu.name +  '&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOzIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgYICRAuGEDSAQg2NTg3ajBqMagCALACAA&sourceid=chrome&ie=UTF-8'" class="text-xl duration-200 hover:text-primary">{{langu.name}}</a>
-                            <div>{{langu.percentage}}%</div>
+                @for(langu of skills ; track langu){
+                    @if(langu.type === 1){
+                        <div class="bg-lighter-main-bg p-4 rounded-[4px]">
+                            <div class="flex w-full items-center justify-between">
+                                <a target="_blank" [href]="'https://www.google.com/search?q=' + langu.name + '&oq= ' + langu.name +  '&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOzIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgYICRAuGEDSAQg2NTg3ajBqMagCALACAA&sourceid=chrome&ie=UTF-8'" class="text-xl duration-200 hover:text-primary">{{langu.name}}</a>
+                                <div>{{langu.percentage}}%</div>
+                            </div>
+                            <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
+                                <div class="bg-primary-bg h-full" [style]="'width :' + langu.percentage + '%'"></div>
+                            </div>
                         </div>
-                        <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
-                            <div class="bg-primary-bg h-full" [style]="'width :' + langu.percentage + '%'"></div>
-                        </div>
-                    </div>
+                    }
                 }
             </div>
         </div>
@@ -35,15 +38,17 @@
             <div class="text-center mb-10 lg:text-3xl text-2xl">Skills I know :</div>
             <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-10 w-full">
                 @for(skill of skills ; track skill){
-                    <div class="bg-lighter-main-bg p-4 rounded-[4px]">
-                        <div class="flex w-full items-center justify-between">
-                            <a target="_blank" [href]="'https://www.google.com/search?q=' + skill.name + '&oq= ' + skill.name +  '&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOzIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgYICRAuGEDSAQg2NTg3ajBqMagCALACAA&sourceid=chrome&ie=UTF-8'" class="text-xl duration-200 hover:text-primary">{{skill.name}}</a>
-                            <div>{{skill.percentage}}%</div>
+                    @if(skill.type === 0){
+                        <div class="bg-lighter-main-bg p-4 rounded-[4px]">
+                            <div class="flex w-full items-center justify-between">
+                                <a target="_blank" [href]="'https://www.google.com/search?q=' + skill.name + '&oq= ' + skill.name +  '&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOzIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgYICRAuGEDSAQg2NTg3ajBqMagCALACAA&sourceid=chrome&ie=UTF-8'" class="text-xl duration-200 hover:text-primary">{{skill.name}}</a>
+                                <div>{{skill.percentage}}%</div>
+                            </div>
+                            <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
+                                <div class="bg-primary-bg h-full" [style]="'width :' + skill.percentage + '%'"></div>
+                            </div>
                         </div>
-                        <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
-                            <div class="bg-primary-bg h-full" [style]="'width :' + skill.percentage + '%'"></div>
-                        </div>
-                    </div>
+                    }
                 }
             </div>
         </div>

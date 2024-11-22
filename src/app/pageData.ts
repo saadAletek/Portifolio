@@ -1,9 +1,23 @@
 
-export const mail = 'said.elatik.603@gmail.com'
-export const phone = '+905362961334'
-export const Twitter = 'https://x.com/Mr_Hamun'
-export const github = 'https://github.com/saadAletek'
-export const insta = 'https://www.instagram.com/said.elatik/'
+export const socialMedia = [
+    {
+        name : 'https://x.com/Mr_Hamun',
+        image : 'images/x_c.svg'
+    },
+    {
+        name : 'https://github.com/saadAletek',
+        image : 'images/github_c.svg'
+    },
+    {
+        name : 'https://www.instagram.com/said.elatik/',
+        image : 'images/insta_c.svg'
+    }
+]
+
+export const personalDetails = {
+    mail : 'said.elatik.603@gmail.com',
+    phone : '+905362961334'
+}
 
 export const myWork = [
     {
@@ -75,59 +89,78 @@ export const skills = [
     {
         id : 1,
         name : 'Angular',
-        percentage : 70
+        percentage : 70,
+        type : 0,
+        main : true
     },
     {
         id : 2,
         name : 'JavaScript',
-        percentage : 80
+        percentage : 80,
+        type : 0,
+        main : true
     },
     {
         id : 3,
         name : 'TypeScript',
-        percentage : 70
+        percentage : 70,
+        type : 0,
+        main : true
     },
     {
         id : 4,
         name : 'CSS 3',
-        percentage : 85
+        percentage : 85,
+        type : 0,
+        main : true
     },
     {
         id : 5,
         name : 'HTML 5',
-        percentage : 95
+        percentage : 95,
+        type : 0,
+        main : true
     },
     {
         id : 6,
         name : 'Tailwind',
-        percentage : 80
+        percentage : 80,
+        type : 0,
+        main : true
     },
     {
         id : 7,
         name : 'Figma',
-        percentage : 50
+        percentage : 50,
+        type : 0,
+        main : false
     },
     {
         id : 8,
         name : 'Github / GIT',
-        percentage : 70
-    }
-]
-
-export const languages = [
+        percentage : 70,
+        type : 0,
+        main : false
+    },
     {
-        id : 1,
+        id : 9,
         name : 'Arabic',
-        percentage : 100
+        percentage : 100,
+        type : 1,
+        main : false
     },
     {
-        id : 2,
+        id : 10,
         name : 'Turkish',
-        percentage : 90
+        percentage : 90,
+        type : 1,
+        main : false
     },
     {
-        id : 3,
+        id : 11,
         name : 'English',
-        percentage : 70
+        percentage : 70,
+        type : 1,
+        main : false
     }
 ]

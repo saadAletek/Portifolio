@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { skills , languages } from '../../app/pageData'
+import { skills } from '../../app/pageData'
 
 @Component({
   selector: 'app-aboutme',
@@ -10,6 +10,20 @@ import { skills , languages } from '../../app/pageData'
 })
 export class AboutmeComponent {
   skills = skills
-  languages = languages
+  currentAge: number = 17;
+
+
+  ngOnInit(): void {
+    this.calculateYearsSince(new Date(2007, 10, 17));
+  }
+
+  calculateYearsSince(startDate: Date): void {
+    const currentDate = new Date();
+    const yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
+    const hasPassed = currentDate.getMonth() > startDate.getMonth() || 
+                      (currentDate.getMonth() === startDate.getMonth() && currentDate.getDate() >= startDate.getDate());
+    
+    this.currentAge = hasPassed ? yearsDiff : yearsDiff - 1;
+  }
 
 }
