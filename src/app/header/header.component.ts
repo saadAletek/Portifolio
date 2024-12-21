@@ -31,8 +31,7 @@ export class HeaderComponent {
       this.changeTheme();
   
       if (!theme) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        this.isLight = !prefersDark;
+        this.isLight = false;
         localStorage.setItem('theme', this.isLight ? 'true' : 'false');
         this.changeTheme();
       } else {

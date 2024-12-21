@@ -78,6 +78,20 @@ export const myWork = [
     },
     {
         id : 6,
+        name : 'Satel reality',
+        url : 'https://www.satelrealty.com/en/event',
+        image : 'images/satel.png',
+        details : ''
+    },
+    {
+        id : 7,
+        name : 'SOS game',
+        url : 'https://game-sos.netlify.app/',
+        image : 'images/Sos.png',
+        details : ''
+    },
+    {
+        id : 8,
         name : 'Password manager',
         url : '',
         image : 'images/passMan.png',

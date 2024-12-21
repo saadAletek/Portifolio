@@ -14,14 +14,14 @@
                 class="flex items-center gap-3 duration-200 incGapAnimation cursor-pointer text-primary hover:brightness-125  lg:text-2xl text-sm">
                 <div class="font-bold">More About me</div>
                 <div>
-                    <img src="images/arrowLeft.svg">
+                    <img alt="arrow-left" src="images/arrowLeft.svg">
                 </div>
             </div>
         </div>
 
 
         <div class="md:relative md:right-auto right-0 md:filter-none grayscale absolute z-0 xl:p-0 p-3">
-            <img class="xl:w-[500px] lg:w-[300px] w-[250px] z-20 rounded-full duration-200 hover:scale-105  glowing-effect"
+            <img class="xl:w-[500px] lg:w-[300px] w-[250px] z-20 rounded-full duration-200 hover:scale-105  glowing-effect" alt="selfie"
                 src="images/selfie.png">
         </div>
 
@@ -81,7 +81,7 @@
         <div class="grid lg:grid-cols-2 grid-cols-1 gap-8 mt-32 w-full text-white">
             @for(work of works; track work){
                 <div class="overflow-hidden relative group rounded-md">
-                    <img loading="lazy" class="w-full" [src]="work.image">
+                    <img alt="work" loading="lazy" class="w-full" [src]="work.image">
                     <div
                         class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex flex-col justify-end">
                         <div class="w-full text-center mb-4 text-2xl">
@@ -105,7 +105,7 @@
             class="flex items-center gap-2 duration-200 hover:gap-5 cursor-pointer text-primary hover:brightness-125 mt-20 text-2xl">
             <div class="font-bold">See More</div>
             <div>
-                <img loading="lazy" src="images/arrowLeft.svg">
+                <img alt="arrow-left" loading="lazy" src="images/arrowLeft.svg">
             </div>
         </div>
     </div>
