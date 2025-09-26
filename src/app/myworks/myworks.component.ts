@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { myWork } from '../../app/pageData'
 import { RouterModule } from '@angular/router';
+import { PageService } from '../services/Page.service';
+import { Work } from '../interface/pageInterface.dto';
 
 @Component({
   selector: 'app-myworks',
@@ -10,5 +11,15 @@ import { RouterModule } from '@angular/router';
   styleUrl: './myworks.component.scss'
 })
 export class MyworksComponent {
- works = myWork
+  worksArray :Work[] = []
+
+  constructor (
+    private PageService : PageService
+  ){}
+
+  ngOnInit(){
+    this.PageService.getWorks().subscribe((works)=>{
+      this.worksArray = works
+    })
+  }
 }

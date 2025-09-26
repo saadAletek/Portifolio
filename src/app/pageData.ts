@@ -9,7 +9,7 @@ export const socialMedia = [
         image : 'images/github_c.svg'
     },
     {
-        name : 'https://www.instagram.com/said.elatik/',
+        name : 'https://www.instagram.com/said_elatik/',
         image : 'images/insta_c.svg'
     }
 ]
@@ -24,7 +24,7 @@ export const myWork = [
         id : 1,
         name : 'Themar',
         url : 'https://themar.sa/landing',
-        image : 'images/themar.png',
+        image : 'https://i.imgur.com/XPI84HI.png',
         details : `
                 <div class=" text-2xl">
             <img class="w-full rounded-md" src="https://i.imgur.com/XPo9FKT.png">
@@ -35,14 +35,13 @@ export const myWork = [
                 My main part was making the landing page
             </div>
         </div>
-
         `
     },
     {
         id : 2,
         name : 'JHD',
         url : 'https://visitalbalad.com/en',
-        image : 'images/jhd.png',
+        image : 'https://i.imgur.com/vEZadWz.png',
         details : `
                             <div class=" text-2xl">
             <img class="w-full rounded-md" src="https://i.imgur.com/z489EpQ.png">
@@ -98,7 +97,6 @@ export const myWork = [
         details : ''
     }
 ]
-
 export const skills = [
     {
         id : 1,

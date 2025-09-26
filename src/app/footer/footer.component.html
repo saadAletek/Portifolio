@@ -1,14 +1,18 @@
-<div class="w-full py-10 border-t border-primary/25">
+<div class="w-full py-3 border-t border-primary/25">
     <div class="container mx-auto px-2 text-center flex lg:flex-row flex-col gap-5 items-center justify-between">
-        <div class="text-cont font-semibold">
-            ©2024 All rights reserved.
+        <div class="text-cont font-semibold text-xs">
+            Designed & Developed by  <span class="text-primary">Saad Aletek</span>.
         </div>
         <div class="flex gap-5">
-            @for(social of socialMedia ; track social){
-                <a [href]="social.name" target="_blank" class="p-2 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
-                    <img loading="lazy" class="relative z-10 duration-200" [src]="social.image">
+                <a [href]="'https://x.com/' + personalData.twitter" target="_blank" class="p-1 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
+                    <img loading="lazy" class="duration-200" src="images/x_c.svg">
                 </a>
-            }
+                <a [href]="'https://github.com/' + personalData.github" target="_blank" class="p-1 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
+                    <img loading="lazy" class="duration-200" src="images/github_c.svg">
+                </a>
+                <a [href]="'https://www.instagram.com/' + personalData.instagram" target="_blank" class="p-1 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
+                    <img loading="lazy" class="duration-200" src="images/insta_c.svg">
+                </a>
         </div>
     </div>
 </div>

@@ -5,6 +5,8 @@ import { ContactmeComponent } from './contactme/contactme.component';
 import { MyworksComponent } from './myworks/myworks.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { WorkDetailsComponent } from './work-details/work-details.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { BlogsDetailsComponent } from './blogs-details/blogs-details.component';
 
 export const routes: Routes = [
     {
@@ -28,7 +30,15 @@ export const routes: Routes = [
         component : WorkDetailsComponent
     },
     {
+        path : 'blogs/:id',
+        component : BlogsDetailsComponent
+    },
+    {
         path : 'blogs',
         component : BlogsComponent,
+    },
+    {
+        path : 'adminLogin',
+        component : AdminLoginComponent,
     }
 ];

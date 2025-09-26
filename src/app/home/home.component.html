@@ -4,14 +4,14 @@
         <div class="relative z-10">
             <div class="2xl:text-7xl xl:text-6xl lg:text-4xl text-3xl leading-snug lg:mb-20 mb-10">
                 <p>Hi I'm a</p>
-                <p class="text-primary duration-300 hover:brightness-125 cursor-pointer font-bold glowing-text">Frontend
+                <p class="text-primary duration-300 hover:brightness-150 cursor-pointer font-bold glowing-text">Frontend
                     Developer</p>
-                <p>based in <span
-                        class="text-primary duration-300 hover:brightness-125 cursor-pointer font-bold glowing-text">Turkey</span>
+                <p>Living in <span
+                        class="text-primary duration-300 hover:brightness-150 cursor-pointer font-bold glowing-text">Turkey</span>
                 </p>
             </div>
             <div [routerLink]="'about-me'"
-                class="flex items-center gap-3 duration-200 incGapAnimation cursor-pointer text-primary hover:brightness-125  lg:text-2xl text-sm">
+                class="flex items-center gap-3 duration-200 incGapAnimation cursor-pointer text-primary hover:brightness-150  lg:text-2xl text-sm">
                 <div class="font-bold">More About me</div>
                 <div>
                     <img alt="arrow-left" src="images/arrowLeft.svg">
@@ -22,7 +22,7 @@
 
         <div class="md:relative md:right-auto right-0 md:filter-none grayscale absolute z-0 xl:p-0 p-3">
             <img class="xl:w-[500px] lg:w-[300px] w-[250px] z-20 rounded-full duration-200 hover:scale-105  glowing-effect" alt="selfie"
-                src="images/selfie.png">
+                src="images/selfie2.png">
         </div>
 
 
@@ -42,27 +42,25 @@
 <!-- My Skills -->
 <div class="py-28 border-t border-primary/25">
     <div class="container mx-auto px-3 flex flex-col items-center">
-        <div class="common-headers text-primary text-4xl font-semibold">
-            <p>My Main Skills</p>
+        <div class="common-headers text-primary text-4xl font-black">
+            <p>My Skills</p>
             <div></div>
         </div>
         <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-10 pt-16 w-full">
-            @for(skill of skills ; track skill){
-                @if(skill.main){
+            @for(skill of skillArray ; track skill){
                     <div class="bg-lighter-main-bg p-4 rounded-[4px]">
                         <div class="flex w-full items-center justify-between">
-                            <a target="_blank" [href]="'https://www.google.com/search?q=' + skill.name + '&oq= ' + skill.name +  '&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOzIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgYICRAuGEDSAQg2NTg3ajBqMagCALACAA&sourceid=chrome&ie=UTF-8'" class="text-xl duration-200 hover:text-primary">{{skill.name}}</a>
-                            <div>{{skill.percentage}}%</div>
+                            <a class="text-xl duration-200">{{skill.name}}</a>
+                            <div>{{skill.value}}%</div>
                         </div>
                         <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
-                            <div class="bg-primary-bg h-full" [style]="'width :' + skill.percentage + '%'"></div>
+                            <div class="bg-primary-bg h-full" [style]="'width :' + skill.value + '%'"></div>
                         </div>
                     </div>
-                }
             }
         </div>
         <div [routerLink]="'about-me'"
-            class="flex items-center gap-2 duration-200 hover:gap-5 cursor-pointer text-primary hover:brightness-125 mt-20 text-2xl">
+            class="flex items-center gap-2 duration-200 hover:gap-5 cursor-pointer text-primary hover:brightness-150 mt-20 text-xl">
             <div class="font-bold">See More</div>
             <div>
                 <img loading="lazy" src="images/arrowLeft.svg">
@@ -74,12 +72,12 @@
 <!-- My Work -->
 <div class="py-28 pb-16 border-t border-primary/25">
     <div class="container mx-auto px-3 flex flex-col items-center">
-        <div class="common-headers text-primary text-4xl font-semibold">
-            <p>Some of my work</p>
+        <div class="common-headers text-primary text-4xl font-black">
+            <p>My Work</p>
             <div></div>
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 gap-8 mt-32 w-full text-white">
-            @for(work of works; track work){
+            @for(work of worksArray; track work){
                 <div class="overflow-hidden relative group rounded-md">
                     <img alt="work" loading="lazy" class="w-full" [src]="work.image">
                     <div
@@ -88,7 +86,7 @@
                             {{work.name}}
                         </div>
                         <div class="flex justify-center items-center lg:gap-16 gap-5">
-                            <a [href]="work.url" target="_blank"
+                            <a [href]="work.link" target="_blank"
                                 class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                                 Visit
                             </a>
@@ -102,7 +100,41 @@
             }
         </div>
         <div [routerLink]="'my-works'"
-            class="flex items-center gap-2 duration-200 hover:gap-5 cursor-pointer text-primary hover:brightness-125 mt-20 text-2xl">
+            class="flex items-center gap-2 duration-200 hover:gap-5 cursor-pointer text-primary hover:brightness-150 mt-20 text-xl">
+            <div class="font-bold">See More</div>
+            <div>
+                <img alt="arrow-left" loading="lazy" src="images/arrowLeft.svg">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-28 pb-16 border-t border-primary/25">
+    <div class="container mx-auto px-3 flex flex-col items-center">
+        <div class="common-headers text-primary text-4xl font-black">
+            <p>My Blogs</p>
+            <div></div>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-8 mt-32 w-full text-white">
+            @for(work of blogsArray; track work){
+                <div class="overflow-hidden relative group rounded-md">
+                    <img alt="work" loading="lazy" class="w-full" [src]="work.image">
+                    <div
+                        class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex flex-col justify-end">
+                        <div class="w-full text-center mb-4 text-2xl">
+                            {{work.name}}
+                        </div>
+                        <div class="flex justify-center items-center lg:gap-16 gap-5">
+                            <div [routerLink]="'/blogs/' + work.id"
+                                class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
+                                Details
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div [routerLink]="'blogs'"
+            class="flex items-center gap-2 duration-200 hover:gap-5 cursor-pointer text-primary hover:brightness-150 mt-20 text-xl">
             <div class="font-bold">See More</div>
             <div>
                 <img alt="arrow-left" loading="lazy" src="images/arrowLeft.svg">

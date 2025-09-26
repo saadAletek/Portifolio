@@ -1,26 +1,25 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Work } from '../interface/pageInterface.dto';
+import { Blog } from '../interface/pageInterface.dto';
 import { PageService } from '../services/Page.service';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-work-details',
+  selector: 'app-blogs-details',
   standalone: true,
   imports: [],
-  templateUrl: './work-details.component.html',
-  styleUrl: './work-details.component.scss'
+  templateUrl: './blogs-details.component.html',
+  styleUrl: './blogs-details.component.scss'
 })
-export class WorkDetailsComponent {
-  id: string = ''
-  work :Work = {
-    id:'',
-    name: '',
-    link: '',
-    image:'',
-    details : '',
-  }
+export class BlogsDetailsComponent {
 
+    id: string = ''
+    blog :Blog = {
+      id:'',
+      name: '',
+      image:'',
+      details : '',
+    }
 
   constructor(
     private route: ActivatedRoute,
@@ -28,14 +27,14 @@ export class WorkDetailsComponent {
     private location: Location
   ) {}
 
-  ngOnInit(): void {
+    ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') ?? ''
     this.getDetails(this.id)
   }
 
   getDetails(id:String){
-    this.PageService.getWorkById(id).subscribe((work)=>{
-    this.work = work
+    this.PageService.getBlogById(id).subscribe((blog)=>{
+    this.blog = blog
     });
   }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { socialMedia } from '../../app/pageData'
+import { PageService } from '../services/Page.service';
+import { personalData } from '../interface/pageInterface.dto';
 
 @Component({
   selector: 'app-footer',
@@ -9,5 +10,16 @@ import { socialMedia } from '../../app/pageData'
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  socialMedia = socialMedia;
+    personalData:personalData = {}
+  
+    constructor(
+      private PageService :PageService
+    ){}
+  
+    ngOnInit(){
+      this.PageService.personelData().subscribe((pd)=>{
+        this.personalData = pd
+      })
+    }
+
 }

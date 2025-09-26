@@ -1,27 +1,71 @@
-<div class="py-28 min-h-custom">
+<div class="py-28 max-h-custom min-h-custom">   
     <div class="container mx-auto px-3 flex flex-col items-center">
-        <div class="common-headers text-primary text-4xl font-semibold">
+        <div class="common-headers text-primary text-4xl font-black">
             <p>Contact me</p>
             <div></div>
         </div>
-        <div class="mt-16 lg:text-3xl text-xl">
-            <a [href]="'mailto:' + personalDetails.mail" class="flex justify-center gap-3 bg-lighter-main-bg p-5 rounded-md cursor-pointer duration-200 hover:scale-105 hover:brightness-90">
-                <img class="onlightBrightness w-7" src="images/mail.svg">
-                <p>{{personalDetails.mail}}</p>
-            </a>
-            <a [href]="'tel:' + personalDetails.phone" class="flex justify-center gap-3 bg-lighter-main-bg p-5 rounded-md cursor-pointer duration-200 hover:scale-105 hover:brightness-90 mt-10">
-                <img class="onlightBrightness w-7" src="images/phone.svg">
-                <p>{{personalDetails.phone}}</p>
-            </a>
-            <div class="mt-10">
-                Contact me on:
+        <div class="grid xl:grid-cols-3 grid-cols-1 gap-32 mt-12 text-xl w-full ">
+            <div class="flex flex-col gap-5 xl:col-span-2">
+                <div>
+                    <label class="pl-1 w-min cursor-text duration-200" for="name" #name>
+                        <span class="relative top-[38px] duration-200">N</span>
+                        <span class="relative top-[38px] duration-200">a</span>
+                        <span class="relative top-[38px] duration-200">m</span>
+                        <span class="relative top-[38px] duration-200">e</span>
+                        <span class="relative top-[38px] duration-200">:</span>
+                    </label>
+                    <input class="w-full bg-transparent border-b border-main-black  rounded-sm px-2 py-2 mt-1 text-base focus:outline-none" id="name" (focus)="onFocus(this.name)" (blur)="onBlur(this.name)">
+                </div>
+                <div>
+                    <label class="pl-1 w-min cursor-text duration-200" for="email" #email>
+                        <span class="relative top-[38px] duration-200">E</span>
+                        <span class="relative top-[38px] duration-200">m</span>
+                        <span class="relative top-[38px] duration-200">a</span>
+                        <span class="relative top-[38px] duration-200">i</span>
+                        <span class="relative top-[38px] duration-200">l</span>
+                        <span class="relative top-[38px] duration-200">:</span>
+                    </label>
+                    <input class="w-full bg-transparent border-b border-main-black rounded-sm px-2 py-2 mt-1 text-base focus:outline-none" id="email" (focus)="onFocus(this.email)" (blur)="onBlur(this.email)">
+                </div>
+                <div>
+                    <label class="pl-1 w-min cursor-text duration-200" for="msg" #msg>
+                        <span class="relative top-[38px] duration-200">M</span>
+                        <span class="relative top-[38px] duration-200">e</span>
+                        <span class="relative top-[38px] duration-200">s</span>
+                        <span class="relative top-[38px] duration-200">s</span>
+                        <span class="relative top-[38px] duration-200">a</span>
+                        <span class="relative top-[38px] duration-200">g</span>
+                        <span class="relative top-[38px] duration-200">e</span>
+                        <span class="relative top-[38px] duration-200">:</span>
+
+                    </label>
+                    <textarea class="w-full bg-transparent border-b border-main-black rounded-sm px-2 py-2 resize-none mt-1 text-base focus:outline-none" rows="3" id="msg" (focus)="onFocus(this.msg)" (blur)="onBlur(this.msg)"></textarea>
+                </div>
+                <div class="bg-primary px-5 py-2 xl:w-min text-center rounded-sm mt-[24px] cursor-pointer duration-200 hover:brightness-125 hover:scale-105 text-white">
+                    Send
+                </div>
             </div>
-            <div class="grid grid-cols-3 place-items-center gap-5 mt-5">
-                @for(social of socialMedia ; track social){
-                    <a [href]="social.name" target="_blank" class="p-4 rounded-sm border border-primary cursor-pointer relative hover:scale-110 hover:brightness-75 duration-200">
-                        <img class="relative z-10 duration-200 w-10" [src]="social.image">
-                    </a>
-                }
+            <div class="shadow-2xl inset-1 grid grid-rows-5 p-3 gap-4 text-base font-bold">
+                <a [href]="'mailto:' + personalData.gmail" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-main-bg cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
+                    <img class="w-5" src="images/mail_c.svg">
+                    <span>{{personalData.gmail}}</span>
+                </a>
+                <a [href]="'tel:' + personalData.phone" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-main-bg cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
+                    <img class="w-5" src="images/phone_c.svg">
+                    <span>{{personalData.phone}}</span>
+                </a>
+                <a [href]="'https://x.com/' + personalData.twitter" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-main-bg cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
+                    <img class="w-5" src="images/x_c.svg">
+                    <span>{{personalData.twitter}}</span>
+                </a>
+                <a [href]="'https://github.com/' + personalData.github" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-main-bg cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
+                    <img class="w-5" src="images/github_c.svg">
+                    <span>{{personalData.github}}</span>
+                </a>
+                <a [href]="'https://www.instagram.com/' + personalData.instagram" target="_blank" class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-main-bg cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
+                    <img class="w-5" src="images/insta_c.svg">
+                    <span>{{personalData.instagram}}</span>
+                </a>
             </div>
         </div>
     </div>

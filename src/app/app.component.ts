@@ -4,6 +4,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 
+
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// import { firebaseConfig } from '../environment/environment'
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,4 +19,11 @@ import { HomeComponent } from './home/home.component';
 })
 export class AppComponent {
   title = 'portifolio';
+
+//  app = initializeApp(firebaseConfig);
+//  analytics = getAnalytics(this.app);
+
 }
+
+
+

@@ -1,12 +1,12 @@
 <div class="py-28 pb-16 min-h-custom">
     <div class="container mx-auto px-3 flex flex-col items-center text-white">
-        <div class="common-headers text-primary text-4xl font-semibold">
+        <div class="common-headers text-primary text-4xl font-black">
             <p>My Works</p>
             <div></div>
         </div>
         <div class="grid lg:grid-cols-2 grid-cols-1 gap-8 mt-32 w-full">
 
-            @for(work of works; track work){
+            @for(work of worksArray; track work){
                 <div class="overflow-hidden relative group rounded-md">
                     <img class="w-full" [src]="work.image">
                     <div
@@ -15,7 +15,7 @@
                             {{work.name}}
                         </div>
                         <div class="flex justify-center items-center lg:gap-16 gap-5">
-                            <a [href]="work.url" target="_blank"
+                            <a [href]="work.link" target="_blank"
                                 class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
                                 Visit
                             </a>

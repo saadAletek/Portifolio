@@ -5,13 +5,15 @@
 
 
 :root {
-  --primary : #D46868;
+  --primary : #6F2C8F;
   --main-bg : #232323;
   --lighter-bg : #404040;
   --font-color : #000000;
 }
 
-
+.border-main-black{
+  border-color: var(--font-color);
+}
 
 .transBg {
   transition: background-color .2s ease-in-out;
@@ -41,12 +43,12 @@
 
   ::-moz-selection {
     color: var(--font-color);
-    background: #d4686857
+    background: #6F2C8F57
   }
   
   ::selection {
     color: var(--font-color);
-    background: #d4686857
+    background: #6F2C8F57
   }
   
   .rotated {
@@ -54,17 +56,17 @@
     scale: 0;
 }
 .active{
-    color: #d46868 ;
+    color: #6F2C8F ;
 }
 
 
 .common-headers{
   padding: 10px 20px;
-  border-bottom: 1px solid #D46868;
+  border-bottom: 1px solid #6F2C8F;
   position: relative;
 }
 .common-headers div{
-  background: #D46868;
+  background: #6F2C8F;
   height: 1px;
   width: 60%;
   position: absolute;
@@ -79,7 +81,7 @@
   height: 15px;
   right: -15px;
   border-radius: 50%;
-  border: 1px solid #d46868;
+  border: 1px solid #6F2C8F;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -90,7 +92,7 @@
   height: 15px;
   left: -15px;
   border-radius: 50%;
-  border: 1px solid #d46868;
+  border: 1px solid #6F2C8F;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -98,35 +100,6 @@
 
 .transparent-gradient {
   background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(0, 0, 0, 0.836) 100%);
-}
-
-
-.radius-blob {
-  border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-  animation: blobing 4s infinite linear;
-  transition: border-radius .3s linear;
-  border-radius: 50%;
-}
-
-@keyframes blobing {
-  0% {
-      border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-  }
-  20% {
-      border-radius: 50% 50% 40% 60% / 30% 40% 60% 70%;
-  }
-  40% {
-      border-radius: 65% 35% 45% 55% / 50% 45% 55% 50%;
-  }
-  60% {
-      border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
-  }
-  80% {
-      border-radius: 30% 70% 50% 50% / 35% 65% 45% 55%;
-  }
-  100% {
-      border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-  }
 }
 
 
@@ -144,14 +117,14 @@ animation: scroll ease 1.5s infinite;
 }
 
 .glowing-text {
-      text-shadow: 0 0 20px #d4686886;
+      text-shadow: 0 0 20px #6F2C8F86;
 }
 
 .glowing-effect {
-      box-shadow: 0 0 20px #622e2ed3;
+      box-shadow: 0 0 20px #702c8f65;
 }
 .glowing-effect:hover {
-  box-shadow: 0 0 30px #813939 !important;
+  box-shadow: 0 0 30px #702c8fab !important;
 
 }
 
@@ -159,7 +132,7 @@ animation: scroll ease 1.5s infinite;
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: #d4686821;
+  background-color: #6F2C8F21;
   border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
 }
 .blob-1{
@@ -176,11 +149,11 @@ animation: scroll ease 1.5s infinite;
 
 .common-headers{
   padding: 10px 20px;
-  border-bottom: 1px solid #D46868;
+  border-bottom: 1px solid #6F2C8F;
   position: relative;
 }
 .common-headers div{
-  background: #D46868;
+  background: #6F2C8F;
   height: 1px;
   width: 60%;
   position: absolute;
@@ -195,7 +168,7 @@ animation: scroll ease 1.5s infinite;
   height: 15px;
   right: -15px;
   border-radius: 50%;
-  border: 1px solid #d46868;
+  border: 1px solid #6F2C8F;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -206,7 +179,7 @@ animation: scroll ease 1.5s infinite;
   height: 15px;
   left: -15px;
   border-radius: 50%;
-  border: 1px solid #d46868;
+  border: 1px solid #6F2C8F;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -247,5 +220,5 @@ animation: scroll ease 1.5s infinite;
   color: var(--font-color);
 }
 .min-h-custom{
-  min-height: calc(100vh - 117px);
+  min-height: calc(100vh - 54px);
 }
