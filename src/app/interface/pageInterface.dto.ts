@@ -4,6 +4,10 @@ export interface Skill {
     main : Boolean
 }
 
+export interface Landing {
+    img: String;
+}
+
 export interface Work {
     id: String;
     name: String;
@@ -11,6 +15,7 @@ export interface Work {
     image: String
     details: String;
 }
+
 
 export interface personalData {
     id?: string;

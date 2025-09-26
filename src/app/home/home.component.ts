@@ -14,6 +14,7 @@ export class HomeComponent {
   blogsArray :Blog[] = []
   skillArray :Skill[] = []
   langs : any
+  LandingImage:any
 
   inputValue: string = '';
   readResults : any
@@ -31,6 +32,9 @@ export class HomeComponent {
     });
     this.PageService.getSkills().subscribe((skills)=>{
       skills.filter((skill) => { skill.main ? this.skillArray.push(skill) : '' } )
+    });
+    this.PageService.LandingData().subscribe((landing)=>{
+      this.LandingImage = landing.img
     });
   }
 

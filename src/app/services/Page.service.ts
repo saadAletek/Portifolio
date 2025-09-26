@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Work, Skill, personalData, Blog } from '../interface/pageInterface.dto';
+import { Work, Skill, personalData, Blog, Landing } from '../interface/pageInterface.dto';
 import { collection, collectionData, doc, docData, Firestore } from '@angular/fire/firestore';
 
 @Injectable({
@@ -21,23 +21,27 @@ export class PageService {
   }
 
   getBlogs(): Observable<Blog[]> {
-    const worksRef = collection(this.firestore, '/PageContent/Blogs/Blogs');
-    return collectionData(worksRef, { idField: 'id' }) as Observable<Blog[]>;
+    const BlogsRef = collection(this.firestore, '/PageContent/Blogs/Blogs');
+    return collectionData(BlogsRef, { idField: 'id' }) as Observable<Blog[]>;
   }
 
   getBlogById(id:String): Observable<Blog> {
-    const workRef = doc(this.firestore, `/PageContent/Blogs/Blogs/${id}`);
-    return docData(workRef, { idField: 'id' }) as Observable<Blog>;
+    const BlogRef = doc(this.firestore, `/PageContent/Blogs/Blogs/${id}`);
+    return docData(BlogRef, { idField: 'id' }) as Observable<Blog>;
   }
 
   getSkills(): Observable<Skill[]> {
-    const worksRef = collection(this.firestore, '/PageContent/aboutMe/skills');
-    return collectionData(worksRef, { idField: 'id' }) as Observable<Skill[]>;
+    const SkillsRef = collection(this.firestore, '/PageContent/aboutMe/skills');
+    return collectionData(SkillsRef, { idField: 'id' }) as Observable<Skill[]>;
   }
 
   personalData():Observable<personalData> {
-    const worksRef = doc(this.firestore, 'PageContent/personalDetails');
-    return docData(worksRef, { idField: 'id' }) as Observable<personalData>;
+    const pdRef = doc(this.firestore, 'PageContent/personalDetails');
+    return docData(pdRef, { idField: 'id' }) as Observable<personalData>;
+  }
+  LandingData():Observable<Landing>{
+    const landingRef = doc(this.firestore, '/PageContent/Landing');
+    return docData(landingRef) as Observable<Landing>;
   }
   
 
