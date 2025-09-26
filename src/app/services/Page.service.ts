@@ -35,10 +35,11 @@ export class PageService {
     return collectionData(worksRef, { idField: 'id' }) as Observable<Skill[]>;
   }
 
-  personelData():Observable<personalData> {
+  personalData():Observable<personalData> {
     const worksRef = doc(this.firestore, 'PageContent/personalDetails');
     return docData(worksRef, { idField: 'id' }) as Observable<personalData>;
   }
+  
 
 }
 

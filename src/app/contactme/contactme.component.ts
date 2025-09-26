@@ -21,7 +21,7 @@ export class ContactmeComponent {
   ){}
 
   ngOnInit(){
-    this.PageService.personelData().subscribe((pd)=>{
+    this.PageService.personalData().subscribe((pd)=>{
       this.personalData = pd
     })
   }
