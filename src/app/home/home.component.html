@@ -117,17 +117,14 @@
         <div class="grid lg:grid-cols-2 grid-cols-1 gap-8 mt-32 w-full text-white">
             @for(work of blogsArray; track work){
                 <div class="overflow-hidden relative group rounded-md">
-                    <img alt="work" loading="lazy" class="w-full" [src]="work.image">
-                    <div
-                        class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex flex-col justify-end">
-                        <div class="w-full text-center mb-4 text-2xl">
+                    <img class="w-full" [src]="work.image">
+                    <div [routerLink]="'/blogs/' + work.id"
+                        class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex justify-around items-end cursor-pointer">
+                        <div class=" text-center text-2xl text-white">
                             {{work.name}}
                         </div>
-                        <div class="flex justify-center items-center lg:gap-16 gap-5">
-                            <div [routerLink]="'/blogs/' + work.id"
-                                class="text-xl border border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-primary hover:text-primary">
-                                Details
-                            </div>
+                        <div class="py-1">
+                            <img src="images/arrowRight.svg">
                         </div>
                     </div>
                 </div>
