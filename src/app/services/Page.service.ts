@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Work, Skill, personalData, Blog, Landing } from '../interface/pageInterface.dto';
+import { Work, Skill, personalData, Blog, Landing, Lang } from '../interface/pageInterface.dto';
 import { collection, collectionData, doc, docData, Firestore } from '@angular/fire/firestore';
 
 @Injectable({
@@ -33,6 +33,10 @@ export class PageService {
   getSkills(): Observable<Skill[]> {
     const SkillsRef = collection(this.firestore, '/PageContent/aboutMe/skills');
     return collectionData(SkillsRef, { idField: 'id' }) as Observable<Skill[]>;
+  }
+  getLangs(): Observable<Lang[]> {
+    const LangsRef = collection(this.firestore, '/PageContent/aboutMe/languages');
+    return collectionData(LangsRef, { idField: 'id' }) as Observable<Lang[]>;
   }
 
   personalData():Observable<personalData> {

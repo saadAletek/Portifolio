@@ -7,7 +7,7 @@
             </div>
             <div class="mt-10 text-center xl:text-3xl lg:text-2xl text-xl grid gap-20">
                 <p>My name is <span class="text-primary">Saad Aletek</span>.</p>
-                <p> I am <span class="text-primary">{{currentAge}}</span> years old from <span class="text-primary">Syria</span>.</p>
+                <!-- <p> I am <span class="text-primary">{{currentAge}}</span> years old from <span class="text-primary">Syria</span>.</p> -->
                 <p>I'am a <span class="text-primary">Frontend</span> developer living in <span class="text-primary">Turkey</span>.</p>
             </div>
         </div>
@@ -19,40 +19,37 @@
                 </a>
             </div>
         </div>
-        <div class="text-xl py-16 border-b border-primary/25">
-            <div class="text-center mb-10 lg:text-3xl text-2xl">Languages I speak :</div>
-            <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-10 w-full">
-                @for(langu of skills ; track langu){
-                    @if(langu.type === 1){
-                        <div class="bg-lighter-main-bg p-4 rounded-[4px]">
-                            <div class="flex w-full items-center justify-between">
-                                <a target="_blank" [href]="'https://www.google.com/search?q=' + langu.name + '&oq= ' + langu.name +  '&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOzIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgYICRAuGEDSAQg2NTg3ajBqMagCALACAA&sourceid=chrome&ie=UTF-8'" class="text-xl duration-200 hover:text-primary">{{langu.name}}</a>
-                                <div>{{langu.percentage}}%</div>
+        <div class="py-24 grid gap-32 grid-cols-1 xl:grid-cols-2">
+            <div>
+                <div class="w-full text-center text-3xl font-bold text-primary mb-10">My Skills</div>
+                <div class="grid grid-cols-4 gap-16">
+                    @for(skill of skillArray ; track skill){  
+                    <div class="relative bg-lighter-main-bg flex justify-center p-3 aspect-square rounded-md overflow-hidden group">
+                        <img class="flex h-min w-20 group-hover:w-12 brightness-100 group-hover:brightness-[20] group-hover:top-0 group-hover:translate-y-0 relative top-1/2 -translate-y-1/2 duration-200 z-50" [src]="skill.image">
+                        <div class="absolute bottom-[-105%] group-hover:bottom-0  w-full h-full flex items-end justify-center duration-200">
+                            <div class="relative z-50 mb-2 text-center">
+                                <div class="text-xl text-white mb-1">{{skill.name}}</div>
                             </div>
-                            <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
-                                <div class="bg-primary-bg h-full" [style]="'width :' + langu.percentage + '%'"></div>
-                            </div>
+                            <img class="absolute w-full" src="images/wave.svg">
                         </div>
+                    </div>                        
                     }
-                }
+                </div>
             </div>
-        </div>
-        <div class="text-xl py-16">
-            <div class="text-center mb-10 lg:text-3xl text-2xl">Skills I know :</div>
-            <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-10 w-full">
-                @for(skill of skills ; track skill){
-                    @if(skill.type === 0){
-                        <div class="bg-lighter-main-bg p-4 rounded-[4px]">
-                            <div class="flex w-full items-center justify-between">
-                                <a target="_blank" [href]="'https://www.google.com/search?q=' + skill.name + '&oq= ' + skill.name +  '&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOzIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgYICRAuGEDSAQg2NTg3ajBqMagCALACAA&sourceid=chrome&ie=UTF-8'" class="text-xl duration-200 hover:text-primary">{{skill.name}}</a>
-                                <div>{{skill.percentage}}%</div>
+            <div>
+                <div class="w-full text-center text-3xl font-bold text-primary mb-10">My Languages</div>
+                <div class="grid grid-cols-1 gap-16">
+                    <div class="relative bg-lighter-main-bg flex justify-center p-3 rounded-md overflow-hidden group">
+                        <img class="flex h-min w-20 group-hover:w-16 brightness-100 group-hover:brightness-[20] group-hover:top-0 group-hover:translate-y-0 relative top-1/2 -translate-y-1/2 duration-200 z-50" src="images/TS.svg">
+                        <div class="absolute bottom-[-105%] group-hover:bottom-0  w-full h-full flex items-end justify-center duration-200">
+                            <div class="relative z-50 mb-2 text-center">
+                                <div class="text-xl text-white mb-1">TypeScript</div>
+                                <div class="bg-lighter-main-bg rounded-lg text-sm">80%</div>
                             </div>
-                            <div class="w-full bg-main-bg h-4 mt-3 rounded-[4px] overflow-hidden">
-                                <div class="bg-primary-bg h-full" [style]="'width :' + skill.percentage + '%'"></div>
-                            </div>
+                            <img class="absolute w-full" src="images/wave.svg">
                         </div>
-                    }
-                }
+                    </div>
+                </div>
             </div>
         </div>
     </div>

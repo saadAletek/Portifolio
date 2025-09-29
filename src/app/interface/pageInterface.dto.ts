@@ -1,7 +1,14 @@
 export interface Skill {
     name: String;
     value : String;
-    main : Boolean
+    main : Boolean;
+    image : String
+}
+export interface Lang {
+    name: String;
+    value : String;
+    main : Boolean;
+    image : String
 }
 
 export interface Landing {
