@@ -35,7 +35,6 @@ export class HomeComponent {
     });
     this.PageService.getLangs().subscribe((lang)=>{
       this.langsArr = lang;
-      console.log(this.langsArr)
     });
     this.PageService.LandingData().subscribe((landing)=>{
       this.LandingImage = landing.img

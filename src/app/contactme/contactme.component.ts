@@ -19,6 +19,8 @@ export class ContactmeComponent {
   @ViewChild('name') name!: ElementRef;
   @ViewChild('email') email!: ElementRef;
   @ViewChild('msg') msg!: ElementRef;
+  formGroup: FormGroup;
+  private timeoutId: ReturnType<typeof setTimeout> | null = null;
 
   personalData:personalData = {}
 
@@ -27,7 +29,7 @@ export class ContactmeComponent {
     @Inject(DOCUMENT) private document: Document,
     private fb: FormBuilder,
   ){
-        this.formGroup = this.fb.group({
+      this.formGroup = this.fb.group({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
@@ -51,7 +53,6 @@ export class ContactmeComponent {
       }, i * 50)
     }
   }
-
   onBlur(element:any){
     let letters = element.querySelectorAll('span')
     if(element.nextElementSibling.value == '')
@@ -60,16 +61,7 @@ export class ContactmeComponent {
         letters[i].style.top = '38px'
       }, i * 30)
     }
-  }
-  onSubmit(){
-
-  }
-
-  
-  
-  formGroup: FormGroup;
-
-    private timeoutId: ReturnType<typeof setTimeout> | null = null;
+  }  
 
   CurrencyMenuOpen = false
   MenuTran = false
@@ -79,6 +71,9 @@ export class ContactmeComponent {
     if(this.formGroup.valid){
       this.toggleMenu()
       this.formGroup.reset();
+      this.onBlur(this.name.nativeElement)
+      this.onBlur(this.email.nativeElement)
+      this.onBlur(this.msg.nativeElement)
     }else{
       this.formGroup.dirty
     }
