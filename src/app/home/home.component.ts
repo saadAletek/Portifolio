@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PageService } from '../services/Page.service';
-import { Blog, Skill, Work } from '../interface/pageInterface.dto';
+import { Blog, Lang, Skill, Work } from '../interface/pageInterface.dto';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -13,7 +13,7 @@ export class HomeComponent {
   worksArray :Work[] = []
   blogsArray :Blog[] = []
   skillArray :Skill[] = []
-  langs : any
+  langsArr : Lang[] = []
   LandingImage:any
 
   inputValue: string = '';
@@ -32,6 +32,10 @@ export class HomeComponent {
     });
     this.PageService.getSkills().subscribe((skills)=>{
       skills.filter((skill) => { skill.main ? this.skillArray.push(skill) : '' } )
+    });
+    this.PageService.getLangs().subscribe((lang)=>{
+      this.langsArr = lang;
+      console.log(this.langsArr)
     });
     this.PageService.LandingData().subscribe((landing)=>{
       this.LandingImage = landing.img

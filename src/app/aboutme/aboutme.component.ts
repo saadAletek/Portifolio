@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Skill } from '../interface/pageInterface.dto';
+import { Lang, Skill } from '../interface/pageInterface.dto';
 import { PageService } from '../services/Page.service';
 
 @Component({
@@ -11,7 +11,9 @@ import { PageService } from '../services/Page.service';
 })
 export class AboutmeComponent {
   skillArray :Skill[] = []
-  langs : any
+  langsArr : Lang[] = []
+  LandingImage:any
+  // langs : any
 
   constructor(
     private PageService: PageService,
@@ -20,7 +22,12 @@ export class AboutmeComponent {
   ngOnInit(): void {
     this.PageService.getSkills().subscribe((skills)=>{
       this.skillArray = skills;
-      console.log(skills)
+    });
+    this.PageService.getLangs().subscribe((lang)=>{
+      this.langsArr = lang;
+    });
+    this.PageService.LandingData().subscribe((landing)=>{
+      this.LandingImage = landing.img
     });
     // this.calculateYearsSince(new Date(2007, 10, 17));
   }

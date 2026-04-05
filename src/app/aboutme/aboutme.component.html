@@ -1,52 +1,69 @@
 <div class="py-28 min-h-custom">
-    <div class="container mx-auto px-3">
+    <div class="global-container mx-auto px-3">
         <div class="my-36">
             <div class="w-full flex items-center justify-center">
-                <img class="w-[300px] z-20 rounded-full duration-200 hover:scale-105 glowing-effect"
-                src="images/selfie2.png">
+                <img class="w-[300px] z-20 rounded-full duration-200 hover:scale-105"
+                [src]="LandingImage">
             </div>
             <div class="mt-10 text-center xl:text-3xl lg:text-2xl text-xl grid gap-20">
                 <p>My name is <span class="text-primary">Saad Aletek</span>.</p>
-                <!-- <p> I am <span class="text-primary">{{currentAge}}</span> years old from <span class="text-primary">Syria</span>.</p> -->
-                <p>I'am a <span class="text-primary">Frontend</span> developer living in <span class="text-primary">Turkey</span>.</p>
+                <p>I'am a syrian <span class="text-primary">Frontend</span> developer living in <span class="text-primary">Turkey</span>.</p>
             </div>
         </div>
-        <div class="text-xl py-16 mt-9 border-b border-primary/25">
-            <div class="text-center mb-10 lg:text-3xl text-2xl">Companies I worked with :</div>
-            <div class="w-full flex items-center justify-center gap-10">
-                <a href="https://sol-gr.com/" target="_blank" class="bg-lighter-main-bg p-5 rounded-[4px]">
-                    <img src="images/SOL.svg">
-                </a>
-            </div>
-        </div>
-        <div class="py-24 grid gap-32 grid-cols-1 xl:grid-cols-2">
-            <div>
-                <div class="w-full text-center text-3xl font-bold text-primary mb-10">My Skills</div>
-                <div class="grid grid-cols-4 gap-16">
-                    @for(skill of skillArray ; track skill){  
-                    <div class="relative bg-lighter-main-bg flex justify-center p-3 aspect-square rounded-md overflow-hidden group">
-                        <img class="flex h-min w-20 group-hover:w-12 brightness-100 group-hover:brightness-[20] group-hover:top-0 group-hover:translate-y-0 relative top-1/2 -translate-y-1/2 duration-200 z-50" [src]="skill.image">
-                        <div class="absolute bottom-[-105%] group-hover:bottom-0  w-full h-full flex items-end justify-center duration-200">
-                            <div class="relative z-50 mb-2 text-center">
-                                <div class="text-xl text-white mb-1">{{skill.name}}</div>
+        <div class="global-container mx-auto grid xl:grid-cols-2 grid-cols-1 gap-20">
+            <div class="flex flex-col items-center">
+                <div class="common-headers text-primary text-4xl">
+                    <p>My Skills</p>
+                    <div></div>
+                </div>
+                    <div class="grid md:grid-cols-4 grid-cols-2 gap-16 mt-20">
+                        @for(skill of skillArray ; track skill){  
+                        <div class="relative bg-darkerPrimary/20 flex justify-center p-3 aspect-square rounded-md overflow-hidden group">
+                            <img class="flex h-min w-20 group-hover:w-12 group-hover:top-0 group-hover:translate-y-0 relative top-1/2 -translate-y-1/2 duration-200 z-50" [src]="skill.image">
+                            <div class="absolute bottom-[-105%] group-hover:bottom-0  w-full h-full flex items-end justify-center duration-200">
+                                <div class="relative z-50 mb-2 text-center">
+                                    <div class="text-base font-normal text-lighterPrimary mb-1">{{skill.name}}</div>
+                                </div>
                             </div>
-                            <img class="absolute w-full" src="images/wave.svg">
-                        </div>
-                    </div>                        
-                    }
+                        </div>                        
+                        }
+                    </div>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="common-headers text-primary text-4xl">
+                    <p>My Languages</p>
+                    <div></div>
+                </div>
+                <div class="grid md:grid-cols-3 grid-cols-2 gap-16 mt-20">
+                        @for(lang of langsArr ; track lang){  
+                        <div class="relative bg-darkerPrimary/20 flex justify-center p-3 aspect-square rounded-md overflow-hidden group">
+                            <img class="flex h-min w-20 group-hover:w-12 group-hover:top-0 group-hover:translate-y-0 relative top-1/2 -translate-y-1/2 duration-200 z-50" [src]="lang.image">
+                            <div class="absolute bottom-[-105%] group-hover:bottom-0  w-full h-full flex items-end justify-center duration-200">
+                                <div class="relative z-50 mb-2 text-center">
+                                    <div class="text-base font-normal text-lighterPrimary mb-1">{{lang.name}}</div>
+                                </div>
+                            </div>
+                        </div>                        
+                        }
                 </div>
             </div>
-            <div>
-                <div class="w-full text-center text-3xl font-bold text-primary mb-10">My Languages</div>
-                <div class="grid grid-cols-1 gap-16">
-                    <div class="relative bg-lighter-main-bg flex justify-center p-3 rounded-md overflow-hidden group">
-                        <img class="flex h-min w-20 group-hover:w-16 brightness-100 group-hover:brightness-[20] group-hover:top-0 group-hover:translate-y-0 relative top-1/2 -translate-y-1/2 duration-200 z-50" src="images/TS.svg">
-                        <div class="absolute bottom-[-105%] group-hover:bottom-0  w-full h-full flex items-end justify-center duration-200">
-                            <div class="relative z-50 mb-2 text-center">
-                                <div class="text-xl text-white mb-1">TypeScript</div>
-                                <div class="bg-lighter-main-bg rounded-lg text-sm">80%</div>
-                            </div>
-                            <img class="absolute w-full" src="images/wave.svg">
+        </div>
+        
+        <div class="global-container mx-auto mt-16">
+            <div class="w-full flex items-center justify-center flex-col gap-10">
+                <div class="common-headers text-primary text-4xl">
+                    <p>My Work Experiences</p>
+                    <div></div>
+                </div>
+                <div class="mt-20 flex flex-col gap-10 w-full">
+                    <div href="https://sol-gr.com/" target="_blank" class="p-5 rounded-[4px] bg-primary/20 w-full flex sm:flex-row flex-col sm:items-center items-start justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="images/SOL.svg">
+                            <div class="text-2xl">SOL (Speed of Light)</div>
+                        </div>
+                        <div>
+                            <p class="text-sm text-lighterPrimary">Frontend Developer</p>
+                            <p class="text-sm text-lighterPrimary">2022 - 2024</p>
                         </div>
                     </div>
                 </div>

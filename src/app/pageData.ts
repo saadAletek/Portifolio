@@ -8,10 +8,6 @@ export const socialMedia = [
         name : 'https://github.com/saadAletek',
         image : 'images/github_c.svg'
     },
-    {
-        name : 'https://www.instagram.com/said_elatik/',
-        image : 'images/insta_c.svg'
-    }
 ]
 
 export const personalDetails = {

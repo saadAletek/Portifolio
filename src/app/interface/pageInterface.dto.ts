@@ -5,10 +5,9 @@ export interface Skill {
     image : String
 }
 export interface Lang {
+    image : String
     name: String;
     value : String;
-    main : Boolean;
-    image : String
 }
 
 export interface Landing {
@@ -27,8 +26,8 @@ export interface Work {
 export interface personalData {
     id?: string;
     github? : String;
+    linkedin? : String;
     gmail? : String;
-    instagram? : String;
     phone ?: String;
     twitter? : String;
 }

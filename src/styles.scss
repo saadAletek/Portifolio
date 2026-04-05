@@ -1,14 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
 :root {
-  --primary : #6F2C8F;
-  --main-bg : #232323;
-  --lighter-bg : #404040;
-  --font-color : #000000;
+  --primary : #7C3AED;
+
+  --lighter-bg : #303030;
+  --font-color : #fff;
 }
 
 .border-main-black{
@@ -20,7 +20,7 @@
 }
 
 *{
-  font-family: "Jura", sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 /* width */
@@ -30,25 +30,25 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background:  var(--main-bg);
+    background: var(--main-bg);
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background-color: var(--lighter-bg); 
+    background-color: var(--primary);
     border-radius: 10px;
     transition: background-color .3s ease-in-out;
   }
   
 
   ::-moz-selection {
-    color: var(--font-color);
-    background: #6F2C8F57
+    color: white;
+    background: #7c3aed46
   }
   
   ::selection {
-    color: var(--font-color);
-    background: #6F2C8F57
+    color: white;
+    background: #7c3aed46
   }
   
   .rotated {
@@ -56,45 +56,7 @@
     scale: 0;
 }
 .active{
-    color: #6F2C8F ;
-}
-
-
-.common-headers{
-  padding: 10px 20px;
-  border-bottom: 1px solid #6F2C8F;
-  position: relative;
-}
-.common-headers div{
-  background: #6F2C8F;
-  height: 1px;
-  width: 60%;
-  position: absolute;
-  bottom: -15px;
-  right: 50%;
-  transform: translateX(50%);
-}
-.common-headers div::after{
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  right: -15px;
-  border-radius: 50%;
-  border: 1px solid #6F2C8F;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.common-headers div::before{
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  left: -15px;
-  border-radius: 50%;
-  border: 1px solid #6F2C8F;
-  top: 50%;
-  transform: translateY(-50%);
+    color: #7C3AED ;
 }
 
 
@@ -117,7 +79,7 @@ animation: scroll ease 1.5s infinite;
 }
 
 .glowing-text {
-      text-shadow: 0 0 20px #6F2C8F86;
+      text-shadow: 0 0 20px #7C3AED86;
 }
 
 .glowing-effect {
@@ -125,14 +87,13 @@ animation: scroll ease 1.5s infinite;
 }
 .glowing-effect:hover {
   box-shadow: 0 0 30px #702c8fab !important;
-
 }
 
 .blob {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: #6F2C8F21;
+  background-color: #7C3AED21;
   border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
 }
 .blob-1{
@@ -148,13 +109,14 @@ animation: scroll ease 1.5s infinite;
 }
 
 .common-headers{
-  padding: 10px 20px;
-  border-bottom: 1px solid #6F2C8F;
+  font-weight: 600;
+  padding: 16px 20px;
+  border-bottom: 2px solid #ffffff9f; 
   position: relative;
 }
 .common-headers div{
-  background: #6F2C8F;
-  height: 1px;
+  background: #ffffff9f;
+  height: 2px;
   width: 60%;
   position: absolute;
   bottom: -15px;
@@ -168,7 +130,7 @@ animation: scroll ease 1.5s infinite;
   height: 15px;
   right: -15px;
   border-radius: 50%;
-  border: 1px solid #6F2C8F;
+  border: 2px solid #ffffff9f;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -179,7 +141,7 @@ animation: scroll ease 1.5s infinite;
   height: 15px;
   left: -15px;
   border-radius: 50%;
-  border: 1px solid #6F2C8F;
+  border: 2px solid #ffffff9f;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -199,6 +161,16 @@ animation: scroll ease 1.5s infinite;
   background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(0, 0, 0, 0.836) 100%);
 }
 
+.MenuTransition{
+    transition: transform .25s ease-in-out;
+    transform: translateY(100vh);
+}
+
+body.popupOpen{
+    touch-action: none;
+    height: 100vh;
+    overflow: hidden;
+}
 
 .body-light .onlightBrightness {
   filter: brightness(0);
@@ -221,4 +193,50 @@ animation: scroll ease 1.5s infinite;
 }
 .min-h-custom{
   min-height: calc(100vh - 54px);
+}
+
+
+.global-container {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem
+}
+
+@media (min-width: 640px) {
+    .global-container {
+        max-width:640px;
+        padding-right: 1rem;
+        padding-left: 1rem
+    }
+}
+
+@media (min-width: 768px) {
+    .global-container {
+        max-width:768px
+    }
+}
+
+@media (min-width: 1024px) {
+    .global-container {
+        max-width:1024px;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem
+    }
+
+}
+
+@media (min-width: 1280px) {
+    .global-container {
+        max-width:1280px;
+        padding-right: 2rem;
+        padding-left: 2rem
+    }
+}
+
+@media (min-width: 1536px) {
+    .global-container {
+        max-width:1536px;
+        padding-right: 3rem;
+        padding-left: 3rem
+    }
 }
