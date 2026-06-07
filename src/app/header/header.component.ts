@@ -1,12 +1,14 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -17,10 +19,19 @@ export class HeaderComponent {
   isMenuOpen = false
 
   constructor(
-    
     @Inject(DOCUMENT) private document: Document,
+    public i18n: LanguageService,
+    private router: Router,
   ){
-    
+
+  }
+
+  switchLang() {
+    const target = this.i18n.current === 'en' ? 'ar' : 'en';
+    const segments = this.router.url.split('?')[0].split('/').filter(Boolean);
+    segments[0] = target;
+    this.router.navigate(['/', ...segments]);
+    this.closeMenu();
   }
   
   ngOnInit() {

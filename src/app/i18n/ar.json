@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "about": "نبذة عني",
+    "works": "أعمالي",
+    "contact": "تواصل معي",
+    "blogs": "المدونة"
+  },
+  "home": {
+    "greeting": "مرحباً، أنا",
+    "role": "مطوّر واجهات أمامية",
+    "living": "أعيش في <span class=\"text-primary duration-300 hover:text-lighterPrimary cursor-pointer font-bold\">تركيا</span>",
+    "moreAboutMe": "المزيد عني",
+    "seeMore": "عرض المزيد",
+    "myWork": "أعمالي",
+    "visit": "زيارة"
+  },
+  "skills": {
+    "title": "مهاراتي"
+  },
+  "languages": {
+    "title": "لغاتي"
+  },
+  "about": {
+    "intro": "اسمي <span class=\"text-primary\">سعد العتك</span>.",
+    "bio": "أنا مطوّر <span class=\"text-primary\">واجهات أمامية</span> سوري أعيش في <span class=\"text-primary\">تركيا</span>.",
+    "experienceTitle": "خبراتي العملية",
+    "solRole": "مطوّر واجهات أمامية"
+  },
+  "works": {
+    "title": "أعمالي",
+    "visit": "زيارة",
+    "details": "التفاصيل"
+  },
+  "contact": {
+    "title": "تواصل معي",
+    "name": "الاسم:",
+    "email": "البريد الإلكتروني:",
+    "message": "الرسالة:",
+    "send": "إرسال",
+    "sending": "جارٍ الإرسال...",
+    "errorMessage": "تعذّر الإرسال الآن. يرجى المحاولة بعد لحظات.",
+    "successMessage": "تم إرسال رسالتك بنجاح.",
+    "ok": "حسناً"
+  },
+  "footer": {
+    "credit": "تصميم وتطوير <span class=\"text-primary cursor-pointer hover:text-lighterPrimary duration-200\">سعد العتك</span>."
+  },
+  "blogs": {
+    "title": "مدونتي",
+    "empty": "لا توجد مقالات حالياً..."
+  },
+  "adminLogin": {
+    "title": "تسجيل دخول المشرف",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "submit": "تسجيل الدخول",
+    "signingIn": "جارٍ تسجيل الدخول...",
+    "error": "البريد الإلكتروني أو كلمة المرور غير صحيحة."
+  },
+  "dashboard": {
+    "adminPanel": "لوحة التحكم",
+    "overview": "نظرة عامة",
+    "works": "الأعمال",
+    "blogs": "المقالات",
+    "skills": "المهارات",
+    "languages": "اللغات",
+    "logout": "تسجيل الخروج",
+    "title": "نظرة عامة على لوحة التحكم",
+    "welcome": "مرحباً بعودتك أيها المدير",
+    "totalWorks": "إجمالي الأعمال",
+    "totalBlogs": "إجمالي المقالات",
+    "totalSkills": "إجمالي المهارات",
+    "totalLanguages": "إجمالي اللغات",
+    "add": "إضافة",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "save": "حفظ",
+    "saving": "جارٍ الحفظ...",
+    "cancel": "إلغاء",
+    "confirmDelete": "حذف هذا العنصر؟ لا يمكن التراجع عن هذا الإجراء.",
+    "newItem": "جديد",
+    "editItem": "تعديل",
+    "empty": "لا يوجد شيء بعد. اضغط على إضافة لإنشاء عنصر.",
+    "fName": "الاسم",
+    "fTitle": "العنوان",
+    "fLink": "الرابط",
+    "fImage": "رابط الصورة",
+    "fDetails": "التفاصيل (HTML)",
+    "fValue": "القيمة",
+    "fMain": "إظهار في الصفحة الرئيسية",
+    "messages": "الرسائل",
+    "noMessages": "لا توجد رسائل بعد.",
+    "markRead": "تحديد كمقروء",
+    "markUnread": "تحديد كغير مقروء",
+    "unread": "غير مقروء",
+    "profile": "الملف الشخصي",
+    "saved": "تم الحفظ",
+    "pGithub": "اسم مستخدم GitHub",
+    "pLinkedin": "اسم مستخدم LinkedIn",
+    "pGmail": "البريد الإلكتروني",
+    "pPhone": "رقم الهاتف",
+    "pTwitter": "اسم مستخدم Twitter / X"
+  }
+}

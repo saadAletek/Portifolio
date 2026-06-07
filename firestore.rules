@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// Security rules for the aletekportifolio Firestore database.
+//
+// Threat model: the Firebase web config (apiKey, projectId, ...) ships inside
+// the public JS bundle. That is normal and expected — those values are
+// identifiers, NOT secrets. The ONLY thing standing between the public internet
+// and your data is the rules in this file. So: read what must be public,
+// write only as the signed-in admin, deny everything else.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Single-admin portfolio. There is no public sign-up and you create the one
+    // account yourself, so "signed in" == "the admin".
+    //
+    // RECOMMENDED hardening — pin to your account so that even if another
+    // sign-in method is ever enabled, only you can write:
+    //   return request.auth != null && request.auth.token.email == "your-admin@email.com";
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    // --- Public portfolio content -----------------------------------------
+    // The whole site reads from PageContent/** (works, blogs, skills,
+    // languages, personalDetails, Landing). Reads are public; writes require
+    // the admin to be signed in via the dashboard.
+    match /PageContent/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // --- Contact messages -------------------------------------------------
+    // The public contact form may CREATE a message, but only if it passes the
+    // validation below (this is the server-side spam filter — size limits,
+    // required shape, valid-looking email, no extra fields, must start unread
+    // with a server timestamp). Only the signed-in admin may read or delete.
+    match /messages/{id} {
+      allow create: if isValidMessage();
+      allow read, update, delete: if isAdmin();
+    }
+
+    function isValidMessage() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['name', 'email', 'message', 'read', 'createdAt'])
+        && d.name is string && d.name.size() >= 1 && d.name.size() <= 100
+        && d.email is string && d.email.size() <= 200 && d.email.matches('.+@.+\\..+')
+        && d.message is string && d.message.size() >= 1 && d.message.size() <= 5000
+        && d.read == false
+        && d.createdAt == request.time;
+    }
+
+    // --- Default deny ------------------------------------------------------
+    // Anything not explicitly allowed above is fully locked down.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

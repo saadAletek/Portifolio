@@ -6,14 +6,14 @@
                 [src]="LandingImage">
             </div>
             <div class="mt-10 text-center xl:text-3xl lg:text-2xl text-xl grid gap-20">
-                <p>My name is <span class="text-primary">Saad Aletek</span>.</p>
-                <p>I'am a syrian <span class="text-primary">Frontend</span> developer living in <span class="text-primary">Turkey</span>.</p>
+                <p [innerHTML]="'about.intro' | translate"></p>
+                <p [innerHTML]="'about.bio' | translate"></p>
             </div>
         </div>
         <div class="global-container mx-auto grid xl:grid-cols-2 grid-cols-1 gap-20">
             <div class="flex flex-col items-center">
                 <div class="common-headers text-primary text-4xl">
-                    <p>My Skills</p>
+                    <p>{{ 'skills.title' | translate }}</p>
                     <div></div>
                 </div>
                     <div class="grid md:grid-cols-4 grid-cols-2 gap-16 mt-20">
@@ -31,7 +31,7 @@
             </div>
             <div class="flex flex-col items-center">
                 <div class="common-headers text-primary text-4xl">
-                    <p>My Languages</p>
+                    <p>{{ 'languages.title' | translate }}</p>
                     <div></div>
                 </div>
                 <div class="grid md:grid-cols-3 grid-cols-2 gap-16 mt-20">
@@ -52,7 +52,7 @@
         <div class="global-container mx-auto mt-16">
             <div class="w-full flex items-center justify-center flex-col gap-10">
                 <div class="common-headers text-primary text-4xl">
-                    <p>My Work Experiences</p>
+                    <p>{{ 'about.experienceTitle' | translate }}</p>
                     <div></div>
                 </div>
                 <div class="mt-20 flex flex-col gap-10 w-full">
@@ -62,7 +62,7 @@
                             <div class="text-2xl">SOL (Speed of Light)</div>
                         </div>
                         <div>
-                            <p class="text-sm text-lighterPrimary">Frontend Developer</p>
+                            <p class="text-sm text-lighterPrimary">{{ 'about.solRole' | translate }}</p>
                             <p class="text-sm text-lighterPrimary">2022 - 2024</p>
                         </div>
                     </div>

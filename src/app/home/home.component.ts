@@ -2,10 +2,12 @@ import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PageService } from '../services/Page.service';
 import { Blog, Lang, Skill, Work } from '../interface/pageInterface.dto';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageService } from '../services/language.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslateModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -14,13 +16,14 @@ export class HomeComponent {
   blogsArray :Blog[] = []
   skillArray :Skill[] = []
   langsArr : Lang[] = []
-  LandingImage:any
+  LandingImage:any = 'images/NewSelfie.jpg'
 
   inputValue: string = '';
   readResults : any
 
   constructor(
     private PageService:PageService,
+    public i18n: LanguageService,
   ){}
 
   ngOnInit(){
@@ -35,9 +38,6 @@ export class HomeComponent {
     });
     this.PageService.getLangs().subscribe((lang)=>{
       this.langsArr = lang;
-    });
-    this.PageService.LandingData().subscribe((landing)=>{
-      this.LandingImage = landing.img
     });
   }
 

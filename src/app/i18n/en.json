@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "works": "My Works",
+    "contact": "Contact me",
+    "blogs": "Blogs"
+  },
+  "home": {
+    "greeting": "Hi I'm a",
+    "role": "Frontend Developer",
+    "living": "Living in <span class=\"text-primary duration-300 hover:text-lighterPrimary cursor-pointer font-bold\">Turkey</span>",
+    "moreAboutMe": "More About me",
+    "seeMore": "See More",
+    "myWork": "My Work",
+    "visit": "Visit"
+  },
+  "skills": {
+    "title": "My Skills"
+  },
+  "languages": {
+    "title": "My Languages"
+  },
+  "about": {
+    "intro": "My name is <span class=\"text-primary\">Saad Aletek</span>.",
+    "bio": "I'am a syrian <span class=\"text-primary\">Frontend</span> developer living in <span class=\"text-primary\">Turkey</span>.",
+    "experienceTitle": "My Work Experiences",
+    "solRole": "Frontend Developer"
+  },
+  "works": {
+    "title": "My Works",
+    "visit": "Visit",
+    "details": "Details"
+  },
+  "contact": {
+    "title": "Contact me",
+    "name": "Name:",
+    "email": "Email:",
+    "message": "Message:",
+    "send": "Send",
+    "sending": "Sending...",
+    "errorMessage": "Couldn't send right now. Please try again in a moment.",
+    "successMessage": "Your Message has been sent.",
+    "ok": "Ok"
+  },
+  "footer": {
+    "credit": "Designed & Developed by <span class=\"text-primary cursor-pointer hover:text-lighterPrimary duration-200\">Saad Aletek</span>."
+  },
+  "blogs": {
+    "title": "My Blogs",
+    "empty": "Theres no blogs right now..."
+  },
+  "adminLogin": {
+    "title": "Admin Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "signingIn": "Signing in...",
+    "error": "Incorrect email or password."
+  },
+  "dashboard": {
+    "adminPanel": "Admin Panel",
+    "overview": "Overview",
+    "works": "Works",
+    "blogs": "Blogs",
+    "skills": "Skills",
+    "languages": "Languages",
+    "logout": "Logout",
+    "title": "Dashboard Overview",
+    "welcome": "Welcome back, Administrator",
+    "totalWorks": "Total Works",
+    "totalBlogs": "Total Blogs",
+    "totalSkills": "Total Skills",
+    "totalLanguages": "Total Languages",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "confirmDelete": "Delete this item? This cannot be undone.",
+    "newItem": "New",
+    "editItem": "Edit",
+    "empty": "Nothing here yet. Click Add to create one.",
+    "fName": "Name",
+    "fTitle": "Title",
+    "fLink": "Link",
+    "fImage": "Image URL",
+    "fDetails": "Details (HTML)",
+    "fValue": "Value",
+    "fMain": "Show on home page",
+    "messages": "Messages",
+    "noMessages": "No messages yet.",
+    "markRead": "Mark read",
+    "markUnread": "Mark unread",
+    "unread": "Unread",
+    "profile": "Profile",
+    "saved": "Saved",
+    "pGithub": "GitHub username",
+    "pLinkedin": "LinkedIn username",
+    "pGmail": "Email address",
+    "pPhone": "Phone number",
+    "pTwitter": "Twitter / X username"
+  }
+}

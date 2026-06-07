@@ -1,32 +1,40 @@
 <div class="absolute top-0 w-full py-5 transBg z-30" [class.bg-sectionSeperator]="isMenuOpen">
     <div class="global-container mx-auto px-4 flex items-center justify-between">
-        <div [routerLink]="''">
+        <div [routerLink]="['/', i18n.current]">
             <img (click)="closeMenu()" class=" cursor-pointer w-40" alt="logo" src="images/Logo2.svg">
         </div>
         <div class="lg:flex hidden gap-9 text-xl font-normal">
-            <div [routerLink]="''" class="duration-300 hover:text-primary cursor-pointer">
-                Home
+            <div [routerLink]="['/', i18n.current]" class="duration-300 hover:text-primary cursor-pointer">
+                {{ 'nav.home' | translate }}
             </div>
-            <div [routerLink]="'about-me'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
-                About me
+            <div [routerLink]="['/', i18n.current, 'about-me']" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
+                {{ 'nav.about' | translate }}
             </div>
-            <div [routerLink]="'my-works'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
-                My Works
+            <div [routerLink]="['/', i18n.current, 'my-works']" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
+                {{ 'nav.works' | translate }}
             </div>
-            <div [routerLink]="'contact-me'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
-                Contact me
+            <div [routerLink]="['/', i18n.current, 'contact-me']" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
+                {{ 'nav.contact' | translate }}
             </div>
-            <!-- <div [routerLink]="'blogs'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
-                Blogs
+            <!-- <div [routerLink]="['/', i18n.current, 'blogs']" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">
+                {{ 'nav.blogs' | translate }}
             </div> -->
+        </div>
+        <div (click)="switchLang()" class="lg:flex hidden items-center gap-2 text-xl text-primary cursor-pointer">
+            <img class="w-6" src="images/lang.svg">
+            <div>{{ i18n.current === 'en' ? 'AR' : 'EN' }}</div>
         </div>
         <img (click)="toggleMen()" class="lg:hidden block cursor-pointer duration-200 hover:scale-110 w-6" alt="hamburger" #menuHamb [src]="this.isMenuOpen ? 'images/close_w.svg' : 'images/hamb_w.svg'">
     </div>
-    <div class="mt-10 text-center lg:hidden grid  gap-6 duration-200 hidden menuToOpen">
-        <div (click)="closeMenu()" [routerLink]="''" class="duration-300 hover:text-primary cursor-pointer">Home</div>
-        <div (click)="closeMenu()" [routerLink]="'about-me'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">About me</div>
-        <div (click)="closeMenu()" [routerLink]="'my-works'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">My Works</div>
-        <div (click)="closeMenu()" [routerLink]="'contact-me'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">Contact me</div>
-        <!-- <div (click)="closeMenu()" [routerLink]="'blogs'" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">Blogs</div> -->
+    <div class="mt-10 text-center lg:hidden flex flex-col items-center gap-6 duration-200 hidden menuToOpen">
+        <div (click)="closeMenu()" [routerLink]="['/', i18n.current]" class="duration-300 hover:text-primary cursor-pointer">{{ 'nav.home' | translate }}</div>
+        <div (click)="closeMenu()" [routerLink]="['/', i18n.current, 'about-me']" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">{{ 'nav.about' | translate }}</div>
+        <div (click)="closeMenu()" [routerLink]="['/', i18n.current, 'my-works']" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">{{ 'nav.works' | translate }}</div>
+        <div (click)="closeMenu()" [routerLink]="['/', i18n.current, 'contact-me']" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">{{ 'nav.contact' | translate }}</div>
+        <!-- <div (click)="closeMenu()" [routerLink]="['/', i18n.current, 'blogs']" routerLinkActive="active" class="duration-300 hover:text-primary cursor-pointer">{{ 'nav.blogs' | translate }}</div> -->
+        <div (click)="switchLang()" class="flex items-center gap-2 text-xl text-primary cursor-pointer">
+            <img class="w-6" src="images/lang.svg">
+            <div>{{ i18n.current === 'en' ? 'AR' : 'EN' }}</div>
+        </div>
     </div>
 </div>

@@ -37,4 +37,13 @@ export interface Blog {
     name : String;
     image : String;
     details : String;
-} 
+}
+
+export interface Message {
+    id?: string;
+    name: string;
+    email: string;
+    message: string;
+    read: boolean;
+    createdAt?: any; // Firestore Timestamp
+}

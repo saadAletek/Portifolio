@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Work } from '../interface/pageInterface.dto';
 import { PageService } from '../services/Page.service';
 import { Location } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-work-details',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './work-details.component.html',
   styleUrl: './work-details.component.scss'
 })

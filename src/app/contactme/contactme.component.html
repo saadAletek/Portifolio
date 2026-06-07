@@ -6,44 +6,40 @@
         </div>
         <div class="grid xl:grid-cols-3 grid-cols-1 gap-32 mt-12 text-xl w-full ">
             <form [formGroup]="formGroup"  (ngSubmit)="sendInfo()" class="flex flex-col gap-5 xl:col-span-2">
+                <!-- Honeypot: hidden off-screen; real users never see or fill it, bots do. -->
+                <div class="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden" aria-hidden="true">
+                    <label>Company<input type="text" formControlName="company" tabindex="-1" autocomplete="off"></label>
+                </div>
                 <div>
-                    <label class="pl-1 w-min cursor-text duration-200" for="name" #name>
-                        <span class="relative top-[38px] duration-200">N</span>
-                        <span class="relative top-[38px] duration-200">a</span>
-                        <span class="relative top-[38px] duration-200">m</span>
-                        <span class="relative top-[38px] duration-200">e</span>
-                        <span class="relative top-[38px] duration-200">:</span>
+                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap" for="name" #name>
+                        @for(ch of toAnimatedLetters('contact.name' | translate); track $index){
+                            <span class="relative top-[38px] duration-200">{{ ch }}</span>
+                        }
                     </label>
                     <input formControlName="name" class="w-full bg-transparent border-b border-white  rounded-sm px-2 py-2 mt-1 text-base focus:outline-none" id="name" (focus)="onFocus(this.name)" (blur)="onBlur(this.name)">
                 </div>
                 <div>
-                    <label class="pl-1 w-min cursor-text duration-200" for="email" #email>
-                        <span class="relative top-[38px] duration-200">E</span>
-                        <span class="relative top-[38px] duration-200">m</span>
-                        <span class="relative top-[38px] duration-200">a</span>
-                        <span class="relative top-[38px] duration-200">i</span>
-                        <span class="relative top-[38px] duration-200">l</span>
-                        <span class="relative top-[38px] duration-200">:</span>
+                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap" for="email" #email>
+                        @for(ch of toAnimatedLetters('contact.email' | translate); track $index){
+                            <span class="relative top-[38px] duration-200">{{ ch }}</span>
+                        }
                     </label>
                     <input formControlName="email" class="w-full bg-transparent border-b border-white rounded-sm px-2 py-2 mt-1 text-base focus:outline-none" id="email" (focus)="onFocus(this.email)" (blur)="onBlur(this.email)">
                 </div>
                 <div>
-                    <label class="pl-1 w-min cursor-text duration-200" for="msg" #msg>
-                        <span class="relative top-[38px] duration-200">M</span>
-                        <span class="relative top-[38px] duration-200">e</span>
-                        <span class="relative top-[38px] duration-200">s</span>
-                        <span class="relative top-[38px] duration-200">s</span>
-                        <span class="relative top-[38px] duration-200">a</span>
-                        <span class="relative top-[38px] duration-200">g</span>
-                        <span class="relative top-[38px] duration-200">e</span>
-                        <span class="relative top-[38px] duration-200">:</span>
-
+                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap" for="msg" #msg>
+                        @for(ch of toAnimatedLetters('contact.message' | translate); track $index){
+                            <span class="relative top-[38px] duration-200">{{ ch }}</span>
+                        }
                     </label>
                     <textarea formControlName="message" class="w-full bg-transparent border-b border-white rounded-sm px-2 py-2 resize-none mt-1 text-base focus:outline-none" rows="3" id="msg" (focus)="onFocus(this.msg)" (blur)="onBlur(this.msg)"></textarea>
                 </div>
-                <button type="submit" class="bg-primary px-5 py-2 xl:w-min text-center rounded-md mt-[24px] cursor-pointer duration-200 hover:bg-lighterPrimary hover:scale-105 text-white">
-                    Send
+                <button type="submit" [disabled]="sending" class="bg-primary px-5 py-2 xl:w-min text-center rounded-md mt-[24px] cursor-pointer duration-200 hover:bg-lighterPrimary hover:scale-105 text-white whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
+                    {{ (sending ? 'contact.sending' : 'contact.send') | translate }}
                 </button>
+                @if(sendError){
+                    <div class="text-red-400 text-sm">{{ 'contact.errorMessage' | translate }}</div>
+                }
             </form>
             <div class="shadow-2xl inset-1 grid grid-rows-5 p-3 gap-4 text-base font-bold">
                 <a [href]="'mailto:' + personalData.gmail" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-backgroundC cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
@@ -79,10 +75,10 @@
             <img src="images/successTick.svg">
         </div>
         <div class="text-center">
-            Your Message has been sent.
+            {{ 'contact.successMessage' | translate }}
         </div>
         <div>
-            <div class="rounded-md bg-primary px-6 py-2 text-white duration-200 hover:bg-lighterPrimary cursor-pointer" (click)="toggleMenu()">Ok</div>
+            <div class="rounded-md bg-primary px-6 py-2 text-white duration-200 hover:bg-lighterPrimary cursor-pointer" (click)="toggleMenu()">{{ 'contact.ok' | translate }}</div>
         </div>
     </div>
 </div>

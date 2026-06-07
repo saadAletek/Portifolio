@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { Lang, Skill } from '../interface/pageInterface.dto';
 import { PageService } from '../services/Page.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-aboutme',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './aboutme.component.html',
   styleUrl: './aboutme.component.scss'
 })
 export class AboutmeComponent {
   skillArray :Skill[] = []
   langsArr : Lang[] = []
-  LandingImage:any
+  LandingImage:any = 'images/NewSelfie.jpg'
   // langs : any
 
   constructor(
@@ -25,9 +26,6 @@ export class AboutmeComponent {
     });
     this.PageService.getLangs().subscribe((lang)=>{
       this.langsArr = lang;
-    });
-    this.PageService.LandingData().subscribe((landing)=>{
-      this.LandingImage = landing.img
     });
     // this.calculateYearsSince(new Date(2007, 10, 17));
   }
