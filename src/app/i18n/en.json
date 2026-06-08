@@ -56,7 +56,10 @@
     "password": "Password",
     "submit": "Sign in",
     "signingIn": "Signing in...",
-    "error": "Incorrect email or password."
+    "error": "Incorrect email or password.",
+    "or": "or",
+    "google": "Sign in with Google",
+    "notAuthorized": "This account isn't authorized to access the dashboard."
   },
   "dashboard": {
     "adminPanel": "Admin Panel",

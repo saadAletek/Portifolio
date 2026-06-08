@@ -11,14 +11,14 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Single-admin portfolio. There is no public sign-up and you create the one
-    // account yourself, so "signed in" == "the admin".
-    //
-    // RECOMMENDED hardening — pin to your account so that even if another
-    // sign-in method is ever enabled, only you can write:
-    //   return request.auth != null && request.auth.token.email == "your-admin@email.com";
+    // Single-admin portfolio. Google sign-in is enabled, so ANY Google account
+    // can authenticate — therefore we pin write access to the one admin email
+    // (and require the email to be verified). Keep this in sync with
+    // src/app/services/admin.config.ts.
     function isAdmin() {
-      return request.auth != null;
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == 'said.elatik.974@gmail.com';
     }
 
     // --- Public portfolio content -----------------------------------------

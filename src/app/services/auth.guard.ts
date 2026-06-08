@@ -4,6 +4,7 @@ import { CanActivateFn, Router } from '@angular/router';
 import { Auth, authState } from '@angular/fire/auth';
 import { map, take } from 'rxjs';
 import { LanguageService } from './language.service';
+import { isAdminEmail } from './admin.config';
 
 /**
  * Protects the admin dashboard. Only a signed-in Firebase user may enter;
@@ -25,6 +26,6 @@ export const authGuard: CanActivateFn = () => {
   const auth = inject(Auth);
   return authState(auth).pipe(
     take(1),
-    map((user) => (user ? true : loginUrl())),
+    map((user) => (user && isAdminEmail(user.email) ? true : loginUrl())),
   );
 };
