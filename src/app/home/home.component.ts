@@ -4,10 +4,11 @@ import { PageService } from '../services/Page.service';
 import { Blog, Lang, Skill, Work } from '../interface/pageInterface.dto';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
+import { RevealDirective } from '../directives/reveal.directive';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule, TranslateModule],
+  imports: [RouterModule, TranslateModule, RevealDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

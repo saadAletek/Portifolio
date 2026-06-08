@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Lang, Skill } from '../interface/pageInterface.dto';
 import { PageService } from '../services/Page.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { RevealDirective } from '../directives/reveal.directive';
 
 @Component({
   selector: 'app-aboutme',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslateModule, RevealDirective],
   templateUrl: './aboutme.component.html',
   styleUrl: './aboutme.component.scss'
 })

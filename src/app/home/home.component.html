@@ -1,123 +1,117 @@
-<div class="min-h-screen relative flex items-center pt-36">
-    <div  class="global-container mx-auto h-full flex items-center justify-between relative">
-        <div class="relative z-10">
-            <div class="2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl lg:mb-20 mb-10">
-                <p>{{ 'home.greeting' | translate }}</p>
-                <p class="text-primary duration-300 hover:text-lighterPrimary cursor-pointer font-bold">{{ 'home.role' | translate }}</p>
-                <p [innerHTML]="'home.living' | translate"></p>
-            </div>
-            <div [routerLink]="['/', i18n.current, 'about-me']"
-                class="flex items-center gap-3 duration-200 incGapAnimation cursor-pointer text-primary hover:text-lighterPrimary  lg:text-3xl text-sm">
-                <div class="font-medium">{{ 'home.moreAboutMe' | translate }}</div>
-                <div class="">
-                    <img alt="arrow-left" class="w-6" src="images/arrowLeft.svg">
+<!-- ===== Hero ===== -->
+<section class="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden">
+    <div class="global-container mx-auto grid lg:grid-cols-2 gap-12 items-center w-full">
+        <div class="relative z-10 order-2 lg:order-1" appReveal>
+            <span class="kicker mb-6">{{ 'home.role' | translate }}</span>
+            <h1 class="mt-5 font-black tracking-tight leading-[1.04] text-4xl sm:text-5xl xl:text-6xl 2xl:text-7xl">
+                <span class="block text-primaryWhite/60 text-xl sm:text-2xl font-semibold mb-3">{{ 'home.greeting' | translate }}</span>
+                <span class="gradient-text">{{ 'home.role' | translate }}</span>
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-primaryWhite/70 max-w-md" [innerHTML]="'home.living' | translate"></p>
+
+            <div class="mt-9 flex flex-wrap items-center gap-4">
+                <div [routerLink]="['/', i18n.current, 'about-me']" class="btn btn-primary group">
+                    <span>{{ 'home.moreAboutMe' | translate }}</span>
+                    <svg class="w-4 rtl:rotate-180 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </div>
+                <div [routerLink]="['/', i18n.current, 'contact-me']" class="btn btn-ghost">{{ 'nav.contact' | translate }}</div>
             </div>
         </div>
 
-        <div class="md:relative md:right-auto right-0 md:filter-none grayscale absolute z-0 xl:p-0 p-3 duration-200" [class.-scale-x-100]="i18n.current === 'en'">
-            <img class="xl:w-[400px] lg:w-[300px] w-[200px] z-20 duration-200 hover:scale-105 glowing-effect rounded-full"
-                [src]="LandingImage">
+        <div class="relative flex justify-center lg:justify-end order-1 lg:order-2" appReveal>
+            <div class="relative">
+                <div class="absolute -inset-8 rounded-full bg-gradient-to-tr from-primary/40 via-violet-500/20 to-indigo-500/10 blur-3xl floaty"></div>
+                <div class="absolute inset-0 rounded-full ring-1 ring-white/10 scale-110"></div>
+                <div class="relative duration-300" [class.-scale-x-100]="i18n.current === 'en'">
+                    <img class="relative z-10 w-60 sm:w-80 xl:w-[400px] aspect-square object-cover rounded-full ring-1 ring-white/15 glowing-effect"
+                        [src]="LandingImage" alt="portrait">
+                </div>
+            </div>
         </div>
     </div>
-    <div class="absolute bottom-10 right-1/2 translate-x-1/2 lg:block hidden onlightBrightness">
-        <svg width="20px" height="100%" viewBox="0 0 247 390" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 lg:block hidden opacity-50">
+        <svg width="20px" height="46px" viewBox="0 0 247 390" version="1.1" xmlns="http://www.w3.org/2000/svg"
             style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
             <path id="wheel" d="M123.359,79.775l0,72.843" style="fill:none;stroke:#fff;stroke-width:20px;" />
-            <path id="mouse"
-                d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
+            <path id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
                 style="fill:none;stroke:#fff;stroke-width:20px;" />
         </svg>
     </div>
-</div>
+</section>
 
-<!-- My Skills -->
-<div class="py-28 bg-sectionSeperator">
-    <div class="global-container mx-auto grid xl:grid-cols-2 grid-cols-1 gap-20">
+<!-- ===== Skills & Languages ===== -->
+<section class="py-24 border-y border-white/5 bg-white/[0.015]">
+    <div class="global-container mx-auto grid xl:grid-cols-2 grid-cols-1 gap-16 xl:gap-12">
         <div class="flex flex-col items-center">
-            <div class="common-headers text-primary text-4xl">
+            <div class="common-headers text-3xl" appReveal>
                 <p>{{ 'skills.title' | translate }}</p>
                 <div></div>
             </div>
-                <div class="grid md:grid-cols-4 grid-cols-2 gap-16 mt-20">
-                    @for(skill of skillArray ; track skill){  
-                    <div class="relative bg-darkerPrimary/20 flex justify-center p-3 aspect-square rounded-md overflow-hidden group">
-                        <img class="flex h-min w-20 group-hover:w-12 group-hover:top-0 group-hover:translate-y-0 relative top-1/2 -translate-y-1/2 duration-200 z-50" [src]="skill.image">
-                        <div class="absolute bottom-[-105%] group-hover:bottom-0  w-full h-full flex items-end justify-center duration-200">
-                            <div class="relative z-50 mb-2 text-center">
-                                <div class="text-base font-normal text-lighterPrimary mb-1">{{skill.name}}</div>
-                            </div>
-                        </div>
-                    </div>                        
-                    }
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 mt-14 w-full">
+                @for(skill of skillArray ; track skill){
+                <div class="card p-4 flex flex-col items-center justify-center gap-3 aspect-square" [appReveal]="$index * 40">
+                    <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain" [src]="skill.image" [alt]="skill.name">
+                    <div class="text-xs sm:text-sm text-primaryWhite/75 text-center">{{ skill.name }}</div>
                 </div>
+                }
+            </div>
         </div>
+
         <div class="flex flex-col items-center">
-            <div class="common-headers text-primary text-4xl">
+            <div class="common-headers text-3xl" appReveal>
                 <p>{{ 'languages.title' | translate }}</p>
                 <div></div>
             </div>
-            <div class="grid md:grid-cols-3 grid-cols-2 gap-16 mt-20">
-                    @for(lang of langsArr ; track lang){  
-                    <div class="relative bg-darkerPrimary/20 flex justify-center p-3 aspect-square rounded-md overflow-hidden group">
-                        <img class="flex h-min w-20 group-hover:w-12 group-hover:top-0 group-hover:translate-y-0 relative top-1/2 -translate-y-1/2 duration-200 z-50" [src]="lang.image">
-                        <div class="absolute bottom-[-105%] group-hover:bottom-0  w-full h-full flex items-end justify-center duration-200">
-                            <div class="relative z-50 mb-2 text-center">
-                                <div class="text-base font-normal text-lighterPrimary mb-1">{{lang.name}}</div>
-                            </div>
-                        </div>
-                    </div>                        
-                    }
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 mt-14 w-full">
+                @for(lang of langsArr ; track lang){
+                <div class="card p-4 flex flex-col items-center justify-center gap-3 aspect-square" [appReveal]="$index * 40">
+                    <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain" [src]="lang.image" [alt]="lang.name">
+                    <div class="text-xs sm:text-sm text-primaryWhite/75 text-center">{{ lang.name }}</div>
+                </div>
+                }
             </div>
         </div>
     </div>
-    <div class="w-full flex justify-center">
-        <div [routerLink]="['/', i18n.current, 'about-me']" class="flex items-center gap-2 duration-200 hover:gap-5 cursor-pointer text-primary hover:brightness-105 mt-20 text-xl">
-            <div class="font-">{{ 'home.seeMore' | translate }}</div>
-            <div>
-                <img loading="lazy" src="images/arrowLeft.svg">
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- My Work -->
-<div class="py-28 pb-16">
+    <div class="w-full flex justify-center mt-16">
+        <div [routerLink]="['/', i18n.current, 'about-me']" class="btn btn-ghost">
+            <span>{{ 'home.seeMore' | translate }}</span>
+            <svg class="w-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+    </div>
+</section>
+
+<!-- ===== My Work ===== -->
+<section class="py-24">
     <div class="global-container mx-auto flex flex-col items-center">
-        <div class="common-headers text-primary text-5xl font-black">
+        <div class="common-headers text-4xl sm:text-5xl" appReveal>
             <p>{{ 'home.myWork' | translate }}</p>
             <div></div>
         </div>
-        <div class="grid lg:grid-cols-2 grid-cols-1 gap-8 mt-32 w-full text-white">
+
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-6 mt-16 w-full">
             @for(work of worksArray; track work){
-                <div class="overflow-hidden relative group rounded-md">
-                    <img alt="work" loading="lazy" class="w-full" [src]="work.image">
-                    <div
-                        class="absolute transparent-gradient -bottom-64 group-hover:bottom-0 duration-300 w-full h-64 pb-10 px-5 flex flex-col justify-end">
-                        <div class="w-full text-center font-bold mb-4 text-2xl">
-                            {{work.name}}
-                        </div>
-                        <div class="flex justify-center items-center lg:gap-16 gap-5">
-                            <a [href]="work.link" target="_blank"
-                                class="text-xl border-2 font-semibold border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-lighterPrimary hover:text-lighterPrimary">
-                                {{ 'home.visit' | translate }}
-                            </a>
-                            <!-- <div [routerLink]="'/my-works/' + work.id"
-                                class="text-xl  border-2 font-semibold border-white w-full max-w-32 text-center py-1 rounded-md cursor-pointer duration-200 hover:border-lighterPrimary hover:text-lighterPrimary">
-                                Details
-                            </div> -->
-                        </div>
-                    </div>
+            <div class="card overflow-hidden group" [appReveal]="$index * 80">
+                <div class="relative overflow-hidden">
+                    <img alt="work" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-[1.04] duration-500" [src]="work.image">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
                 </div>
+                <div class="p-5 flex items-center justify-between gap-4">
+                    <h3 class="text-lg font-bold">{{ work.name }}</h3>
+                    <a [href]="work.link" target="_blank"
+                        class="btn btn-ghost text-sm !py-2 !px-4">
+                        <span>{{ 'home.visit' | translate }}</span>
+                        <svg class="w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+                    </a>
+                </div>
+            </div>
             }
         </div>
-        <div [routerLink]="['/', i18n.current, 'my-works']"
-            class="flex items-center gap-2 duration-200 hover:gap-5 cursor-pointer text-primary hover:brightness-105 mt-20 text-xl">
-            <div class="font-">{{ 'home.seeMore' | translate }}</div>
-            <div>
-                <img loading="lazy" src="images/arrowLeft.svg">
-            </div>
+
+        <div [routerLink]="['/', i18n.current, 'my-works']" class="btn btn-ghost mt-14">
+            <span>{{ 'home.seeMore' | translate }}</span>
+            <svg class="w-4 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </div>
     </div>
-</div>
+</section>

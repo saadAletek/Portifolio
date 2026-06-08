@@ -4,11 +4,12 @@ import { Work } from '../interface/pageInterface.dto';
 import { PageService } from '../services/Page.service';
 import { Location } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { RevealDirective } from '../directives/reveal.directive';
 
 @Component({
   selector: 'app-work-details',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslateModule, RevealDirective],
   templateUrl: './work-details.component.html',
   styleUrl: './work-details.component.scss'
 })

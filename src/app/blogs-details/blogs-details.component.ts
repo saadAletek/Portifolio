@@ -3,11 +3,12 @@ import { Blog } from '../interface/pageInterface.dto';
 import { PageService } from '../services/Page.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { RevealDirective } from '../directives/reveal.directive';
 
 @Component({
   selector: 'app-blogs-details',
   standalone: true,
-  imports: [],
+  imports: [RevealDirective],
   templateUrl: './blogs-details.component.html',
   styleUrl: './blogs-details.component.scss'
 })

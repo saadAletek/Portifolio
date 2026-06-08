@@ -4,6 +4,7 @@ import { personalData } from '../interface/pageInterface.dto';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { RevealDirective } from '../directives/reveal.directive';
 
 @Component({
   selector: 'app-contactme',
@@ -12,7 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    TranslateModule
+    TranslateModule,
+    RevealDirective
   ],
   templateUrl: './contactme.component.html',
   styleUrl: './contactme.component.scss'

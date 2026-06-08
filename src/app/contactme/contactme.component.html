@@ -1,84 +1,91 @@
-<div class="py-28 max-h-custom min-h-custom">   
-    <div class="container mx-auto px-3 flex flex-col items-center">
-        <div class="common-headers text-primary text-4xl font-black">
-            <p>Contact me</p>
+<section class="pt-36 pb-24 min-h-custom">
+    <div class="global-container mx-auto flex flex-col items-center">
+        <span class="kicker" appReveal>{{ 'nav.contact' | translate }}</span>
+        <div class="common-headers text-4xl sm:text-5xl mt-4" appReveal>
+            <p>{{ 'contact.title' | translate }}</p>
             <div></div>
         </div>
-        <div class="grid xl:grid-cols-3 grid-cols-1 gap-32 mt-12 text-xl w-full ">
-            <form [formGroup]="formGroup"  (ngSubmit)="sendInfo()" class="flex flex-col gap-5 xl:col-span-2">
+
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 mt-14 w-full">
+            <form [formGroup]="formGroup" (ngSubmit)="sendInfo()" class="card p-6 sm:p-8 flex flex-col gap-6 lg:col-span-2 relative" appReveal>
                 <!-- Honeypot: hidden off-screen; real users never see or fill it, bots do. -->
                 <div class="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden" aria-hidden="true">
                     <label>Company<input type="text" formControlName="company" tabindex="-1" autocomplete="off"></label>
                 </div>
+
                 <div>
-                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap" for="name" #name>
+                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap text-primaryWhite/70" for="name" #name>
                         @for(ch of toAnimatedLetters('contact.name' | translate); track $index){
                             <span class="relative top-[38px] duration-200">{{ ch }}</span>
                         }
                     </label>
-                    <input formControlName="name" class="w-full bg-transparent border-b border-white  rounded-sm px-2 py-2 mt-1 text-base focus:outline-none" id="name" (focus)="onFocus(this.name)" (blur)="onBlur(this.name)">
+                    <input formControlName="name" id="name" (focus)="onFocus(this.name)" (blur)="onBlur(this.name)"
+                        class="w-full bg-transparent border-b border-white/20 px-2 py-2 mt-1 text-base focus:outline-none focus:border-primary duration-200">
                 </div>
                 <div>
-                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap" for="email" #email>
+                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap text-primaryWhite/70" for="email" #email>
                         @for(ch of toAnimatedLetters('contact.email' | translate); track $index){
                             <span class="relative top-[38px] duration-200">{{ ch }}</span>
                         }
                     </label>
-                    <input formControlName="email" class="w-full bg-transparent border-b border-white rounded-sm px-2 py-2 mt-1 text-base focus:outline-none" id="email" (focus)="onFocus(this.email)" (blur)="onBlur(this.email)">
+                    <input formControlName="email" id="email" (focus)="onFocus(this.email)" (blur)="onBlur(this.email)"
+                        class="w-full bg-transparent border-b border-white/20 px-2 py-2 mt-1 text-base focus:outline-none focus:border-primary duration-200">
                 </div>
                 <div>
-                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap" for="msg" #msg>
+                    <label class="pl-1 w-min cursor-text duration-200 whitespace-nowrap text-primaryWhite/70" for="msg" #msg>
                         @for(ch of toAnimatedLetters('contact.message' | translate); track $index){
                             <span class="relative top-[38px] duration-200">{{ ch }}</span>
                         }
                     </label>
-                    <textarea formControlName="message" class="w-full bg-transparent border-b border-white rounded-sm px-2 py-2 resize-none mt-1 text-base focus:outline-none" rows="3" id="msg" (focus)="onFocus(this.msg)" (blur)="onBlur(this.msg)"></textarea>
+                    <textarea formControlName="message" id="msg" rows="3" (focus)="onFocus(this.msg)" (blur)="onBlur(this.msg)"
+                        class="w-full bg-transparent border-b border-white/20 px-2 py-2 resize-none mt-1 text-base focus:outline-none focus:border-primary duration-200"></textarea>
                 </div>
-                <button type="submit" [disabled]="sending" class="bg-primary px-5 py-2 xl:w-min text-center rounded-md mt-[24px] cursor-pointer duration-200 hover:bg-lighterPrimary hover:scale-105 text-white whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
+
+                <button type="submit" [disabled]="sending"
+                    class="btn btn-primary self-start mt-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
                     {{ (sending ? 'contact.sending' : 'contact.send') | translate }}
                 </button>
                 @if(sendError){
                     <div class="text-red-400 text-sm">{{ 'contact.errorMessage' | translate }}</div>
                 }
             </form>
-            <div class="shadow-2xl inset-1 grid grid-rows-5 p-3 gap-4 text-base font-bold">
-                <a [href]="'mailto:' + personalData.gmail" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-backgroundC cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
-                    <img class="w-5" src="images/mail_c.svg">
-                    <span>{{personalData.gmail}}</span>
+
+            <div class="flex flex-col gap-3" [appReveal]="120">
+                <a [href]="'mailto:' + personalData.gmail" target="_blank" class="card !rounded-2xl px-5 py-4 flex items-center gap-4">
+                    <span class="w-10 h-10 rounded-xl glass grid place-items-center shrink-0"><img class="w-5" src="images/mail_c.svg" alt=""></span>
+                    <span class="text-sm text-primaryWhite/80 truncate">{{ personalData.gmail }}</span>
                 </a>
-                <a [href]="'tel:' + personalData.phone" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-backgroundC cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
-                    <img class="w-5" src="images/phone_c.svg">
-                    <span>{{personalData.phone}}</span>
+                <a [href]="'tel:' + personalData.phone" target="_blank" class="card !rounded-2xl px-5 py-4 flex items-center gap-4">
+                    <span class="w-10 h-10 rounded-xl glass grid place-items-center shrink-0"><img class="w-5" src="images/phone_c.svg" alt=""></span>
+                    <span class="text-sm text-primaryWhite/80 truncate">{{ personalData.phone }}</span>
                 </a>
-                <a [href]="'https://x.com/' + personalData.twitter" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-backgroundC cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
-                    <img class="w-5" src="images/x_c.svg">
-                    <span>{{personalData.twitter}}</span>
+                <a [href]="'https://x.com/' + personalData.twitter" target="_blank" class="card !rounded-2xl px-5 py-4 flex items-center gap-4">
+                    <span class="w-10 h-10 rounded-xl glass grid place-items-center shrink-0"><img class="w-5" src="images/x_c.svg" alt=""></span>
+                    <span class="text-sm text-primaryWhite/80 truncate">{{ personalData.twitter }}</span>
                 </a>
-                <a [href]="'https://github.com/' + personalData.github" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-backgroundC cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
-                    <img class="w-5" src="images/github_c.svg">
-                    <span>{{personalData.github}}</span>
+                <a [href]="'https://github.com/' + personalData.github" target="_blank" class="card !rounded-2xl px-5 py-4 flex items-center gap-4">
+                    <span class="w-10 h-10 rounded-xl glass grid place-items-center shrink-0"><img class="w-5" src="images/github_c.svg" alt=""></span>
+                    <span class="text-sm text-primaryWhite/80 truncate">{{ personalData.github }}</span>
                 </a>
-                <a [href]="'https://linkedin.com/in/' + personalData.linkedin" target="_blank"  class="flex items-center gap-4 duration-200 hover:brightness-125 px-5 py-2 rounded-md bg-backgroundC cursor-pointer border-b border-main-black hover:shadow-xl hover:-translate-y-1">
-                    <img class="w-5" src="images/linkedin.svg">
-                    <span>saad aletek</span>
+                <a [href]="'https://linkedin.com/in/' + personalData.linkedin" target="_blank" class="card !rounded-2xl px-5 py-4 flex items-center gap-4">
+                    <span class="w-10 h-10 rounded-xl glass grid place-items-center shrink-0"><img class="w-5" src="images/linkedin.svg" alt=""></span>
+                    <span class="text-sm text-primaryWhite/80 truncate">saad aletek</span>
                 </a>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="w-full h-screen fixed top-0 z-50 items-center justify-center opacity-0 transition-opacity" [ngStyle]="{ 'display': CurrencyMenuOpen ? 'flex' : 'none', 'opacity': MenuTran ? '100%' : '0%'}">
-    <div class="bg-[#00000080] w-full h-screen fixed z-48" (click)="toggleMenu()"></div>
-    <div class="text-darkerPrimary shadow-2xl MenuTransition relative z-49 bg-white rounded-sm text-2xl flex flex-col justify-center items-center gap-10 font-medium     2xl:w-[25vw] xl:w-[30vw] lg:w-[40vw] lg:p-8 sm:w-[60vw] sm:h-fit sm:p-6 w-full h-full p-3"  
-    [ngStyle]="{ 'transform': MenuTran ? 'translateY(0)' : 'translateY(100vh)'}">
-        <div>
-            <img src="images/successTick.svg">
+<!-- Success modal -->
+<div class="w-full h-screen fixed top-0 left-0 z-50 items-center justify-center opacity-0 transition-opacity"
+    [ngStyle]="{ 'display': CurrencyMenuOpen ? 'flex' : 'none', 'opacity': MenuTran ? '100%' : '0%'}">
+    <div class="bg-black/70 backdrop-blur-sm w-full h-screen fixed z-48" (click)="toggleMenu()"></div>
+    <div class="MenuTransition relative z-49 glass rounded-3xl text-2xl flex flex-col justify-center items-center gap-8 font-medium 2xl:w-[28vw] xl:w-[34vw] lg:w-[44vw] lg:p-10 sm:w-[70vw] sm:h-fit sm:p-8 w-[90vw] p-8"
+        [ngStyle]="{ 'transform': MenuTran ? 'translateY(0)' : 'translateY(100vh)'}">
+        <div class="w-16 h-16 rounded-full bg-primary/20 grid place-items-center">
+            <img class="w-9" src="images/successTick.svg" alt="">
         </div>
-        <div class="text-center">
-            {{ 'contact.successMessage' | translate }}
-        </div>
-        <div>
-            <div class="rounded-md bg-primary px-6 py-2 text-white duration-200 hover:bg-lighterPrimary cursor-pointer" (click)="toggleMenu()">{{ 'contact.ok' | translate }}</div>
-        </div>
+        <div class="text-center text-xl">{{ 'contact.successMessage' | translate }}</div>
+        <div class="btn btn-primary cursor-pointer" (click)="toggleMenu()">{{ 'contact.ok' | translate }}</div>
     </div>
 </div>

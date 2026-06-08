@@ -4,11 +4,12 @@ import { Blog } from '../interface/pageInterface.dto';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
+import { RevealDirective } from '../directives/reveal.directive';
 
 @Component({
   selector: 'app-blogs',
   standalone: true,
-  imports: [RouterModule, TranslateModule],
+  imports: [RouterModule, TranslateModule, RevealDirective],
   templateUrl: './blogs.component.html',
   styleUrl: './blogs.component.scss'
 })

@@ -1,7 +1,13 @@
-<div class="py-28 min-h-custom">
-    <div class="global-containermx-auto px-3 mb-5">
-        <img (click)="goBack()" class="w-10 duration-200 hover:scale-105 cursor-pointer" src="images/back.svg">
+<section class="pt-36 pb-24 min-h-custom">
+    <div class="global-container mx-auto">
+        <div class="mb-10" appReveal>
+            <button (click)="goBack()" aria-label="back"
+                class="w-11 h-11 rounded-full glass grid place-items-center hover:border-primary hover:bg-primary/15 hover:-translate-x-1 rtl:hover:translate-x-1 duration-200">
+                <svg class="w-5 rtl:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            </button>
+        </div>
+
+        <div class="text-lg leading-relaxed text-primaryWhite/80 [&_img]:rounded-2xl [&_img]:my-6 [&_a]:text-primary [&_a:hover]:text-lighterPrimary"
+            [innerHTML]="blog.details" appReveal></div>
     </div>
-    <div class="global-containermx-auto px-3" [innerHTML]="blog.details">
-    </div>
-</div>
+</section>
