@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 130" fill="none">
+  <defs>
+    <linearGradient id="alg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9F67F5"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <filter id="alglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#7C3AED" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Mark: gradient badge with upward chevron -->
+  <g filter="url(#alglow)">
+    <rect x="14" y="22" width="86" height="86" rx="24" fill="url(#alg)"/>
+  </g>
+  <path d="M37 80 L57 38 L77 80" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wordmark: ALETEK (monoline, even spacing) -->
+  <g stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 104 L170 34 L190 104 M158 82 H182"/>
+    <path d="M208 34 L208 104 L238 104"/>
+    <path d="M256 34 L256 104 M256 34 L286 34 M256 69 L282 69 M256 104 L286 104"/>
+    <path d="M304 34 L344 34 M324 34 L324 104"/>
+    <path d="M362 34 L362 104 M362 34 L392 34 M362 69 L388 69 M362 104 L392 104"/>
+    <path d="M410 34 L410 104 M410 69 L440 34 M410 69 L440 104"/>
+  </g>
+
+  <!-- Accent dot -->
+  <circle cx="464" cy="98" r="6" fill="url(#alg)"/>
+</svg>
